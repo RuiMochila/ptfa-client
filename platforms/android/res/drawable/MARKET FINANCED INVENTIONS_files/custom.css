@@ -1,0 +1,235 @@
+/* line 1, ../../app/assets/stylesheets/custom.css.scss.erb */
+body {
+  background: url("/assets/bg2.jpg") top center no-repeat fixed;
+  background-size: cover;
+  font-family: arial;
+}
+
+/* line 6, ../../app/assets/stylesheets/custom.css.scss.erb */
+html, body, .container, .content {
+  height: 100%;
+}
+
+/* line 9, ../../app/assets/stylesheets/custom.css.scss.erb */
+.gravatar {
+  width: 65px;
+  height: 65px;
+}
+
+/* line 13, ../../app/assets/stylesheets/custom.css.scss.erb */
+.navbar {
+  color: #fff;
+}
+
+/* line 17, ../../app/assets/stylesheets/custom.css.scss.erb */
+.navbar-nav > li:hover {
+  background-color: #000;
+}
+
+/* line 21, ../../app/assets/stylesheets/custom.css.scss.erb */
+.container {
+  color: #fff;
+}
+
+/* line 24, ../../app/assets/stylesheets/custom.css.scss.erb */
+.container, .content {
+  position: relative;
+}
+
+/* line 27, ../../app/assets/stylesheets/custom.css.scss.erb */
+.full-width {
+  max-width: 100%;
+}
+
+/* line 30, ../../app/assets/stylesheets/custom.css.scss.erb */
+.proper-content {
+  padding-top: 40px;
+  /* >= navbar height */
+  overflow: scroll;
+}
+
+/* line 34, ../../app/assets/stylesheets/custom.css.scss.erb */
+.proper-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 37, ../../app/assets/stylesheets/custom.css.scss.erb */
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  margin: 0 auto -50px;
+  /* same as the footer */
+  display: block;
+}
+
+/* line 43, ../../app/assets/stylesheets/custom.css.scss.erb */
+.push {
+  height: 50px;
+  /* same as the footer */
+}
+
+/* line 46, ../../app/assets/stylesheets/custom.css.scss.erb */
+.footer-wrapper {
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  background-color: #333;
+  width: 100%;
+  z-index: 666;
+}
+
+@media (max-width: 767px) {
+  /* line 55, ../../app/assets/stylesheets/custom.css.scss.erb */
+  .push {
+    height: 0;
+  }
+
+  /* line 58, ../../app/assets/stylesheets/custom.css.scss.erb */
+  .wrapper {
+    margin: 0 auto 0;
+    /* same as the footer */
+  }
+}
+/* line 63, ../../app/assets/stylesheets/custom.css.scss.erb */
+figure {
+  margin: 0;
+  position: relative;
+  height: 100%;
+}
+
+/* line 69, ../../app/assets/stylesheets/custom.css.scss.erb */
+figure img {
+  max-width: 100%;
+  display: block;
+  position: relative;
+}
+
+/* line 75, ../../app/assets/stylesheets/custom.css.scss.erb */
+figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  background: #333;
+  color: white;
+}
+
+/* line 84, ../../app/assets/stylesheets/custom.css.scss.erb */
+figcaption a {
+  font-weight: bolder;
+  color: #fff;
+}
+
+/* line 90, ../../app/assets/stylesheets/custom.css.scss.erb */
+figcaption a:hover {
+  color: #fff;
+}
+
+/* line 94, ../../app/assets/stylesheets/custom.css.scss.erb */
+.cs-style-3 figure {
+  overflow: hidden;
+}
+
+/* line 98, ../../app/assets/stylesheets/custom.css.scss.erb */
+.cs-style-3 figure img {
+  -webkit-transition: -webkit-transform 0.4s;
+  -o-transition: -o-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  transition: transform 0.4s;
+}
+
+/* line 106, ../../app/assets/stylesheets/custom.css.scss.erb */
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure.cs-hover img {
+  -webkit-transform: translateY(-60px);
+  -o-transform: translateY(-60px);
+  -moz-transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  transform: translateY(-60px);
+}
+
+/* line 114, ../../app/assets/stylesheets/custom.css.scss.erb */
+.cs-style-3 figcaption {
+  height: 60px;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+  -o-transition: -o-transform 0.4s, opacity 0.1s 0.3s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+/* line 132, ../../app/assets/stylesheets/custom.css.scss.erb */
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure.cs-hover figcaption {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+  -o-transition: -o-transform 0.4s, opacity 0.1s;
+  -moz-transition: -moz-transform 0.4s, opacity 0.1s;
+  transition: transform 0.4s, opacity 0.1s;
+}
+
+/* line 144, ../../app/assets/stylesheets/custom.css.scss.erb */
+#preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222;
+  /* change if the mask should have another color then white */
+  z-index: 99;
+  /* makes sure it stays on top */
+}
+
+/* line 154, ../../app/assets/stylesheets/custom.css.scss.erb */
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  background-image: url(/assets/blackSpinner.gif);
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+}
+
+/* line 166, ../../app/assets/stylesheets/custom.css.scss.erb */
+.modal-header, .modal-body, .modal-body {
+  background: #333;
+  color: white;
+  font-family: Arial;
+}
+
+/* line 171, ../../app/assets/stylesheets/custom.css.scss.erb */
+.modal-body > .well {
+  color: black;
+}
+
+/* line 175, ../../app/assets/stylesheets/custom.css.scss.erb */
+#turningdreams {
+  color: #a79f6a;
+}
+
+/* line 179, ../../app/assets/stylesheets/custom.css.scss.erb */
+#turningdreams:hover {
+  color: #a79f6a;
+  background: #222;
+}

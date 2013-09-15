@@ -1,0 +1,48 @@
+
+.answeared{
+	text-decoration:line-through;	
+}
+
+
+/* Introduzido */
+
+/*.container, .content {
+    position: relative;
+}
+
+.proper-content {
+    padding-top: 40px;
+    overflow: scroll;
+}
+.proper-content::-webkit-scrollbar { 
+    display: none; 
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto -50px; 
+    display: block;
+}
+
+figure {
+margin: 0;
+position: relative;
+height: 100%;
+}
+
+figure img {
+max-width: 100%;
+display: block;
+position: relative;
+}
+.cs-style-3 figure {
+overflow: hidden;
+}
+
+.cs-style-3 figure img {
+-webkit-transition: -webkit-transform 0.4s;
+-o-transition: -o-transform 0.4s;
+-moz-transition: -moz-transform 0.4s;
+transition: transform 0.4s;
+}
+*/

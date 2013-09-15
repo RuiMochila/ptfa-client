@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=yes" /> <!-- era telephone no-->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages.css" />
+    <link rel="stylesheet" type="text/css" href="css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="css/ratchet.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/vendor/jquery-1.10.2.js"></script>
+    <script src="js/vendor/modernizr.custom.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <title>Portugal Festival Awards</title>
+  </head>
+  <body  style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;' 
+      unselectable='on'
+      onselectstart='return false;'> 
+      <!-- onmousedown='return false;' retirei para consegur carregar nas textbox -->
+  <div id="pages-main" class="pages-perspective">
+      
+
+      <div id="main" class="page page-init">
+        <header class="bar-title">
+              <h1 class="title">Portugal Festival Awards</h1>
+            </header>
+            <div class="content">
+
+                <ul class="list">
+                  <li>
+                    <a id="urbano">
+                      Melhor Festival Urbano
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="media">
+                      Melhor Festival de Média Dimensão
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="pequena">
+                      Melhor Festival de Pequena Dimensão
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="revelacao">
+                      Artista Revelação
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="cabeca">
+                      Melhor Cabeça de Cartaz
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="grande">
+                      Melhor Festival de Grande Dimensão
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="campismo">
+                      Melhor Campismo
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="wc">
+                      Melhores WC's
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="naoUrbano">
+                      Melhor Festival Não Urbano
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a id="me">
+                      Sobre mim
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                </ul>
+                <a class="button button-block">Votar!</a>
+            </div>
+      </div>
+
+      <div id="urbanoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Urbano</h1>
+            </header>
+            <div class="content">
+
+              <ul class="list">
+                  <li>
+                    <a href="#" id="urbano_button">
+                      Go Somewhere
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Go Somewhere
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      Go Somewhere
+                      <span class="chevron"></span>
+                    </a>
+                  </li>
+              </ul>
+              <a id="doneUrbano" class="button button-block back">Continuar</a>
+        </div>
+      </div>
+      
+      <div id="mediaView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+        <h1 class="title">Média Dimensão</h1>
+        </header>
+        <div class="content">
+          <table>
+            
+            <tr>
+            <td><img class="img-responsive" style="padding:10px;" src="/img/stock/1.jpeg"></td>
+            <td><img class="img-responsive" style="padding:10px;" src="/img/stock/2.jpeg"></td>
+            </tr>
+
+            <tr>
+            <td><img class="img-responsive" style="padding:10px;" src="/img/stock/3.png"></td>
+            <td><img class="img-responsive" style="padding:10px;" src="/img/stock/4.png"></td>
+            </tr>
+            
+          </table>
+          <a id="doneMedia" class="button button-block back">Continuar</a>
+        </div>
+      </div>
+
+      <div id="pequenaView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Pequena Dimensão</h1>
+            </header>
+            <div class="content">
+                Some Content
+                <a id="donePequena" class="button button-block back">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="revelacaoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Artista Revelação</h1>
+            </header>
+            <div class="content">
+                Some Content
+                <a id="doneRevelacao" class="button button-block back">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="cabecaView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Cabeça Cartaz</h1>
+            </header>
+            <div class="content">
+                Some Content
+                <a id="doneCabeca" class="button button-block back">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="grandeView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Grande Dimensão</h1>
+            </header>
+            <div class="content">
+                Some Content
+                <a id="doneGrande" class="button button-block back">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="campismoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Melhor Campismo</h1>
+            </header>
+            <div class="content">
+                Some Content
+                <a id="doneCampismo" class="button button-block back">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="wcView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Melhores WC's</h1>
+            </header>
+            <div class="content">
+                Some Content
+                <a id="doneWC" class="button button-block back">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="naoUrbanoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Não Urbano</h1>
+            </header>
+            <div class="content">
+                Some Content
+                <a id="doneNaoUrbano" class="button button-block back">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="meView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Some Mim</h1>
+            </header>
+            <div class="content">
+              <form>
+            <div class="input-group">
+              <div class="input-row">
+                <label for="vote_place">Nome</label>
+                <input id="vote_place" name="vote[place]" type="text">
+              </div>
+              <div class="input-row">
+                <label for="vote_age">Idade</label>
+                <input id="vote_age" name="vote[age]" type="number">
+              </div>
+              <div class="input-row">
+                <label for="email">Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label for="vote_sex">Sexo</label>
+              <select id="vote_sex" name="vote[sex]">
+                <option value="Masculino" selected="selected">Masculino</option>
+                <option value="Feminino">Feminino</option>
+              </select>
+              </div>
+            </div>
+
+            
+            <label for="vote_valoriza_festival">O que é que valorizas mais num festival de música?</label>
+            
+            
+            <select id="vote_valoriza_festival" name="vote[valoriza_festival]">
+              <option value="1">Os artistas/estilo musical</option>
+              <option value="2">A localização</option>
+              <option value="3">O convívio entre pessoas</option>
+              <option value="4">O campismo</option>
+              <option value="5">A higiene</option>
+              <option value="6">O preço</option>
+              <option value="7">A restauração</option>
+              <option value="8">Os brindes</option>
+              <option value="9">A data</option>
+              <option value="10">A meteorologia</option>
+              <option value="11">As acessibilidades</option>
+              <option value="12">A preocupação com a sustentabilidade</option>
+            </select>
+          
+          <label for="vote_artista_ver">Que artista(s) gostavas de ver actuar num festival português no próximo ano?</label>
+            <input id="vote_artista_ver" name="vote[artista_ver]" size="30" type="text">
+
+          </form>
+                <a id="doneMe" class="button button-block back">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="thanksView" class="page">
+        <header class="bar-title">
+              <h1 class="title">Obrigado</h1>
+            </header>
+            <div class="content">
+                Obrigado pela tua participação!
+            </div>        
+      </div>
+
+    </div>
+
+    <script src="js/pagetransitions.js"></script>
+    <script src="js/index.js"></script>
+
+
+
+  </body>
+</html>
