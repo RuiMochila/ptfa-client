@@ -61,8 +61,8 @@ function route() {
 
 function answearListeners() {
     $("#doneUrbano").on('click', function(e) {
-        $("#doneUrbano").attr('disabled', 'disabled');
         $('#urbano').addClass( 'answeared' );
+        // $("#doneUrbano").attr('disabled', 'disabled');
     });
 
     $("#doneMedia").on('click', function(e) {

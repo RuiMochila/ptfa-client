@@ -23,74 +23,75 @@
 
       <div id="main" class="page page-init">
         <header class="bar-title">
-              <h1 class="title">Portugal Festival Awards</h1>
-            </header>
-            <div class="content">
-
-                <ul class="list">
-                  <li>
-                    <a id="urbano">
-                      Melhor Festival Urbano
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="media">
-                      Melhor Festival de Média Dimensão
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="pequena">
-                      Melhor Festival de Pequena Dimensão
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="revelacao">
-                      Artista Revelação
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="cabeca">
-                      Melhor Cabeça de Cartaz
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="grande">
-                      Melhor Festival de Grande Dimensão
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="campismo">
-                      Melhor Campismo
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="wc">
-                      Melhores WC's
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="naoUrbano">
-                      Melhor Festival Não Urbano
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a id="me">
-                      Sobre mim
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                </ul>
-                <a class="button button-block">Votar!</a>
-            </div>
+        <h1 class="title">Portugal Festival Awards</h1>
+        </header>
+          <div class="content">
+            <!-- ✓ -->
+            <ul class="list">
+              <li>
+                <a id="grande">
+                  Melhor Festival de Grande Dimensão
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              <li>
+                <a id="media">
+                  Melhor Festival de Média Dimensão
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              <li>
+                <a id="pequena">
+                  Melhor Festival de Pequena Dimensão
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              <li>
+                <a id="urbano">
+                  Melhor Festival Urbano
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              <li>
+                <a id="naoUrbano">
+                  Melhor Festival Não Urbano
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              <li>
+                <a id="revelacao">
+                  Artista Revelação
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              <li>
+                <a id="cabeca">
+                  Melhor Cabeça de Cartaz
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              <li>
+                <a id="wc">
+                  Melhores WC's
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              <li>
+                <a id="campismo">
+                  Melhor Campismo
+                  <span class="chevron"></span>
+                </a>
+              </li>
+              
+              <li>
+                <a id="me">
+                  Sobre mim
+                  <span class="chevron"></span>
+                </a>
+              </li>
+            </ul>
+            <a class="button button-block">Votar!</a>
+          </div>
       </div>
 
       <div id="urbanoView" class="page">
@@ -120,7 +121,7 @@
                     </a>
                   </li>
               </ul>
-              <a id="doneUrbano" class="button button-block back">Continuar</a>
+              <a id="doneUrbano" onclick='changePage($("#naoUrbanoView"),"right");' class="button button-block">Continuar</a>
         </div>
       </div>
       
@@ -130,20 +131,34 @@
         <h1 class="title">Média Dimensão</h1>
         </header>
         <div class="content">
-          <table>
-            
+          <div class="festivals" >
+          <table style="padding:10px; margin:0 auto; max-width:100%;">
             <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="/img/stock/1.jpeg"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="/img/stock/2.jpeg"></td>
-            </tr>
-
-            <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="/img/stock/3.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="/img/stock/4.png"></td>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
             </tr>
             
+            <tr>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            </tr>
+            
+            <tr>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            </tr>
+            
+            <tr>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            </tr>
+            
+            <tr>
+            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            </tr>
           </table>
-          <a id="doneMedia" class="button button-block back">Continuar</a>
+          </div>
+          <a id="doneMedia" onclick='changePage($("#pequenaView"),"right");' class="button button-block">Continuar</a>
         </div>
       </div>
 
@@ -154,7 +169,7 @@
             </header>
             <div class="content">
                 Some Content
-                <a id="donePequena" class="button button-block back">Continuar</a>
+                <a id="donePequena" onclick='changePage($("#urbanoView"),"right");' class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -165,7 +180,7 @@
             </header>
             <div class="content">
                 Some Content
-                <a id="doneRevelacao" class="button button-block back">Continuar</a>
+                <a id="doneRevelacao" onclick='changePage($("#cabecaView"),"right");' class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -176,7 +191,7 @@
             </header>
             <div class="content">
                 Some Content
-                <a id="doneCabeca" class="button button-block back">Continuar</a>
+                <a id="doneCabeca" onclick='changePage($("#wcView"),"right");' class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -187,7 +202,7 @@
             </header>
             <div class="content">
                 Some Content
-                <a id="doneGrande" class="button button-block back">Continuar</a>
+                <a id="doneGrande" onclick='changePage($("#mediaView"),"right");' class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -209,7 +224,7 @@
             </header>
             <div class="content">
                 Some Content
-                <a id="doneWC" class="button button-block back">Continuar</a>
+                <a id="doneWC" onclick='changePage($("#campismoView"),"right");' class="button button-block back">Continuar</a>
             </div>        
       </div>
 
@@ -220,7 +235,7 @@
             </header>
             <div class="content">
                 Some Content
-                <a id="doneNaoUrbano" class="button button-block back">Continuar</a>
+                <a id="doneNaoUrbano" onclick='changePage($("#revelacaoView"),"right");' class="button button-block back">Continuar</a>
             </div>        
       </div>
 
