@@ -90,74 +90,60 @@
                 </a>
               </li>
             </ul>
+            <!-- Faço o form aqui com hidden fields e altero os valores com jquery -->
             <a class="button button-block">Votar!</a>
+            
           </div>
       </div>
 
-      <div id="urbanoView" class="page">
+      <div id="grandeView" class="page">
         <header class="bar-title">
         <a class="button back">Back</a>
-              <h1 class="title">Urbano</h1>
+              <h1 class="title">Grande Dimensão</h1>
             </header>
             <div class="content">
-
-              <ul class="list">
-                  <li>
-                    <a href="#" id="urbano_button">
-                      Go Somewhere
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Go Somewhere
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Go Somewhere
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-              </ul>
-              <a id="doneUrbano" onclick='changePage($("#naoUrbanoView"),"right");' class="button button-block">Continuar</a>
-        </div>
+                <table id="grandeTable" class="festivals">
+                  <tbody>
+                  </tbody>
+                </table>
+                
+                <a id="doneGrande" onclick='changePage($("#mediaView"),"right");' class="button button-block">Continuar</a>
+            </div>        
       </div>
-      
+
       <div id="mediaView" class="page">
         <header class="bar-title">
         <a class="button back">Back</a>
         <h1 class="title">Média Dimensão</h1>
         </header>
         <div class="content">
-          <div class="festivals" >
-          <table style="padding:10px; margin:0 auto; max-width:100%;">
+          
+          <table class="festivals">
             <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
             </tr>
             
             <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
             </tr>
             
             <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
             </tr>
             
             <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
             </tr>
             
             <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
+            <td><img class="img-responsive media-answear festival"  src="img/festival.png"></td>
             </tr>
           </table>
-          </div>
+          
           <a id="doneMedia" onclick='changePage($("#pequenaView"),"right");' class="button button-block">Continuar</a>
         </div>
       </div>
@@ -168,10 +154,74 @@
               <h1 class="title">Pequena Dimensão</h1>
             </header>
             <div class="content">
-                Some Content
+                <table class="festivals">
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                </table>
+                
                 <a id="donePequena" onclick='changePage($("#urbanoView"),"right");' class="button button-block">Continuar</a>
             </div>        
       </div>
+
+      <div id="urbanoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+        <h1 class="title">Urbano</h1>
+        </header>
+        <div class="content">
+
+          <table class="festivals">
+            <tr>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            </tr>
+            
+            <tr>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            </tr>
+            
+            <tr>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            </tr>
+            
+            <tr>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            </tr>
+            
+            <tr>
+            <td><img class="img-responsive festival"  src="img/festival.png"></td>
+            </tr>
+          </table>
+          
+          <a id="doneUrbano" onclick='changePage($("#naoUrbanoView"),"right");' class="button button-block">Continuar</a>
+        </div>
+      </div>
+      
+      
 
       <div id="revelacaoView" class="page">
         <header class="bar-title">
@@ -179,7 +229,32 @@
               <h1 class="title">Artista Revelação</h1>
             </header>
             <div class="content">
-                Some Content
+                <table class="festivals">
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                </table>
+                
                 <a id="doneRevelacao" onclick='changePage($("#cabecaView"),"right");' class="button button-block">Continuar</a>
             </div>        
       </div>
@@ -190,29 +265,69 @@
               <h1 class="title">Cabeça Cartaz</h1>
             </header>
             <div class="content">
-                Some Content
+                <table class="festivals">
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                </table>
+                
                 <a id="doneCabeca" onclick='changePage($("#wcView"),"right");' class="button button-block">Continuar</a>
             </div>        
       </div>
 
-      <div id="grandeView" class="page">
-        <header class="bar-title">
-        <a class="button back">Back</a>
-              <h1 class="title">Grande Dimensão</h1>
-            </header>
-            <div class="content">
-                Some Content
-                <a id="doneGrande" onclick='changePage($("#mediaView"),"right");' class="button button-block">Continuar</a>
-            </div>        
-      </div>
-
+      
       <div id="campismoView" class="page">
         <header class="bar-title">
         <a class="button back">Back</a>
               <h1 class="title">Melhor Campismo</h1>
             </header>
             <div class="content">
-                Some Content
+                <table class="festivals">
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                </table>
+          
                 <a id="doneCampismo" class="button button-block back">Continuar</a>
             </div>        
       </div>
@@ -223,7 +338,32 @@
               <h1 class="title">Melhores WC's</h1>
             </header>
             <div class="content">
-                Some Content
+                <table class="festivals">
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                </table>
+          
                 <a id="doneWC" onclick='changePage($("#campismoView"),"right");' class="button button-block back">Continuar</a>
             </div>        
       </div>
@@ -234,7 +374,32 @@
               <h1 class="title">Não Urbano</h1>
             </header>
             <div class="content">
-                Some Content
+                <table class="festivals">
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                  
+                  <tr>
+                  <td><img class="img-responsive festival"  src="img/festival.png"></td>
+                  </tr>
+                </table>
+          
                 <a id="doneNaoUrbano" onclick='changePage($("#revelacaoView"),"right");' class="button button-block back">Continuar</a>
             </div>        
       </div>
@@ -307,8 +472,8 @@
     </div>
 
     <script src="js/pagetransitions.js"></script>
+    <script type="text/javascript" src="js/nominees/grande.js"></script>
     <script src="js/index.js"></script>
-
 
 
   </body>

@@ -3,6 +3,19 @@
 	text-decoration:line-through;	
 }
 
+.festivals{
+	margin:0 auto; 
+	max-width:100%;
+}
+
+.festival{
+	padding:10px;
+}
+
+.selected{
+	background: green;
+}
+
 /*.line{
 	overflow: hidden;
 	margin-bottom: 20px;

@@ -3,6 +3,9 @@ $(document).on("ready", function () {
     initPageslider();
     route();
     answearListeners(); 
+    appendNominees(grandeArray, "grandeTable");
+    answear();
+
 });
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -102,3 +105,48 @@ function answearListeners() {
     });
 
 }
+
+function answear() {
+    $('.grande-answear').on('click', function(e) {
+        var id = $(this).attr('value');
+        console.log(id);
+
+        $('.grande-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+        //find input hidden by name vote[grande] value = id;
+        //tirar classe selected-answear a todos .grande-answear
+        //juntar class selected-answear a $(this) para ficar selecionado
+    });
+
+    $('.media-answear').on('click', function(e) {
+        var id = $(this).attr('id');
+        $(this).addClass( 'selected' );
+        //find input hidden by name vote[media] value = id;
+    });
+
+}
+
+function shuffle(o){ 
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
+
+function appendNominees(nominees, table_id) {
+    var aux = []
+    var array = shuffle(nominees);
+    $.each(array, function( index, value ) {
+      if(index%2 == 0){
+        aux.push(value);
+        //fazer append de tr com os elementos td que estão no aux
+        $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+'</tr><tr>'+aux[1]+'</tr>');
+        aux=[];
+      }else{
+        aux.push(value);
+        if(array[index+1]==null){
+          $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+'</tr>');
+        }
+      }
+    }); 
+}  
