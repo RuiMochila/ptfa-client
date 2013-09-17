@@ -129,6 +129,7 @@ a {
   /*background: #fff;*/
   background-image:url('../img/stunning.png');
   background-repeat:repeat-y-x;
+  
   -webkit-transition-property: top, bottom;
           transition-property: top, bottom;
   -webkit-transition-duration: .2s, .2s;  
