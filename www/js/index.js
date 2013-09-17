@@ -128,23 +128,26 @@ function answear() {
 
 }
 
+//shuffle nominees
 function shuffle(o){ 
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
 
+//Chama esta função com o array de nomeados e id tabela para preencher.
 function appendNominees(nominees, table_id) {
     var aux = []
     var array = shuffle(nominees);
     $.each(array, function( index, value ) {
-      if(index%2 == 0){
+      console.log(index);
+      if(index%2 != 0){
         aux.push(value);
-        //fazer append de tr com os elementos td que estão no aux
-        $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+'</tr><tr>'+aux[1]+'</tr>');
+        $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+aux[1]+'</tr>');
         aux=[];
       }else{
         aux.push(value);
         if(array[index+1]==null){
+          console.log("fim");
           $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+'</tr>');
         }
       }

@@ -28,6 +28,4 @@ var grandeArray = [
 	'<td><img value="62" class="img-responsive grande-answear festival" src="img/62.png"></td>',
 	'<td><img value="63" class="img-responsive grande-answear festival" src="img/63.png"></td>',
 	'<td><img value="69" class="img-responsive grande-answear festival" src="img/69.png"></td>'
-	]
-
-console.log(grandeArray);
+	];
