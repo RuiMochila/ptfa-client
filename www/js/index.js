@@ -2,8 +2,16 @@
 $(document).on("ready", function () {
     initPageslider();
     route();
-    answearListeners(); 
+    // answearListeners(); 
     appendNominees(grandeArray, "grandeTable");
+    appendNominees(mediaArray, "mediaTable");
+    appendNominees(pequenaArray, "pequenaTable");
+    appendNominees(urbanoArray, "urbanoTable");
+    appendNominees(naoUrbanoArray, "naoUrbanoTable");
+    appendNominees(revelacaoArray, "revelacaoTable");
+    appendNominees(cabecaArray, "cabecaTable");
+    appendNominees(wcArray, "wcTable");
+    appendNominees(campismoArray, "campismoTable");
     answear();
 
 });
@@ -109,22 +117,94 @@ function answearListeners() {
 function answear() {
     $('.grande-answear').on('click', function(e) {
         var id = $(this).attr('value');
-        console.log(id);
-
+        $('#grande').addClass( 'answeared' );
+        $('#input-grande').val($(this).attr('value'));
         $('.grande-answear').each(function() {
           $(this).removeClass("selected");
         });
         $(this).addClass("selected");
-        //find input hidden by name vote[grande] value = id;
-        //tirar classe selected-answear a todos .grande-answear
-        //juntar class selected-answear a $(this) para ficar selecionado
     });
 
     $('.media-answear').on('click', function(e) {
-        var id = $(this).attr('id');
-        $(this).addClass( 'selected' );
-        //find input hidden by name vote[media] value = id;
+        var id = $(this).attr('value');
+        $('#media').addClass( 'answeared' );
+        $('#input-media').val($(this).attr('value'));
+        $('.media-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
     });
+
+    $('.pequena-answear').on('click', function(e) {
+        var id = $(this).attr('value');
+        $('#pequena').addClass( 'answeared' );
+        $('#input-pequena').val($(this).attr('value'));
+        $('.pequena-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+    });
+
+    $('.urbano-answear').on('click', function(e) {
+        var id = $(this).attr('value');
+        $('#urbano').addClass( 'answeared' );
+        $('#input-urbano').val($(this).attr('value'));
+        $('.urbano-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+    });
+
+    $('.naoUrbano-answear').on('click', function(e) {
+        var id = $(this).attr('value');
+        $('#naoUrbano').addClass( 'answeared' );
+        $('#input-naoUrbano').val($(this).attr('value'));
+        $('.naoUrbano-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+    });
+
+    $('.revelacao-answear').on('click', function(e) {
+        var id = $(this).attr('value');
+        $('#revelacao').addClass( 'answeared' );
+        $('#input-revelacao').val($(this).attr('value'));
+        $('.revelacao-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+    });
+
+    $('.cabeca-answear').on('click', function(e) {
+        var id = $(this).attr('value');
+        $('#cabeca').addClass( 'answeared' );
+        $('#input-cabeca').val($(this).attr('value'));
+        $('.cabeca-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+    });
+
+    $('.wc-answear').on('click', function(e) {
+        var id = $(this).attr('value');
+        $('#wc').addClass( 'answeared' );
+        $('#input-wc').val($(this).attr('value'));
+        $('.wc-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+    });
+
+    $('.campismo-answear').on('click', function(e) {
+        var id = $(this).attr('value');
+        $('#campismo').addClass( 'answeared' );
+        $('#input-campismo').val($(this).attr('value'));
+        $('.campismo-answear').each(function() {
+          $(this).removeClass("selected");
+        });
+        $(this).addClass("selected");
+    });
+
 
 }
 
@@ -139,7 +219,6 @@ function appendNominees(nominees, table_id) {
     var aux = []
     var array = shuffle(nominees);
     $.each(array, function( index, value ) {
-      console.log(index);
       if(index%2 != 0){
         aux.push(value);
         $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+aux[1]+'</tr>');
@@ -147,7 +226,6 @@ function appendNominees(nominees, table_id) {
       }else{
         aux.push(value);
         if(array[index+1]==null){
-          console.log("fim");
           $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+'</tr>');
         }
       }
