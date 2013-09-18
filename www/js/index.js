@@ -3,15 +3,15 @@ $(document).on("ready", function () {
     initPageslider();
     route();
     // answearListeners(); 
-    appendNominees(grandeArray, "grandeTable");
-    appendNominees(mediaArray, "mediaTable");
-    appendNominees(pequenaArray, "pequenaTable");
-    appendNominees(urbanoArray, "urbanoTable");
-    appendNominees(naoUrbanoArray, "naoUrbanoTable");
-    appendNominees(revelacaoArray, "revelacaoTable");
-    appendNominees(cabecaArray, "cabecaTable");
-    appendNominees(wcArray, "wcTable");
-    appendNominees(campismoArray, "campismoTable");
+    appendNominees(grandeArray, "grandeTable", 2);
+    appendNominees(mediaArray, "mediaTable", 2);
+    appendNominees(pequenaArray, "pequenaTable", 2);
+    appendNominees(urbanoArray, "urbanoTable", 2);
+    appendNominees(naoUrbanoArray, "naoUrbanoTable", 2);
+    appendNominees(revelacaoArray, "revelacaoTable", 1);
+    appendNominees(cabecaArray, "cabecaTable", 2);
+    appendNominees(wcArray, "wcTable", 2);
+    appendNominees(campismoArray, "campismoTable", 2);
     answear();
 
 });
@@ -214,20 +214,49 @@ function shuffle(o){
     return o;
 };
 
-//Chama esta função com o array de nomeados e id tabela para preencher.
-function appendNominees(nominees, table_id) {
+// //Chama esta função com o array de nomeados e id tabela para preencher.
+// function appendNominees(nominees, table_id) {
+//     var aux = []
+//     var array = shuffle(nominees);
+//     $.each(array, function( index, value ) {
+//       if(index%2 != 0){
+//         aux.push(value);
+//         $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+aux[1]+'</tr>');
+//         aux=[];
+//       }else{
+//         aux.push(value);
+//         if(array[index+1]==null){
+//           $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+'</tr>');
+//         }
+//       }
+//     }); 
+// }  
+
+function appendNominees(nominees, table_id, cols) {
     var aux = []
+    var counter = 0
     var array = shuffle(nominees);
     $.each(array, function( index, value ) {
-      if(index%2 != 0){
+      counter++;
+      if(counter === cols){
         aux.push(value);
-        $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+aux[1]+'</tr>');
+        $('#'+table_id+' > tbody:last').append('<tr>'+toStringy(aux)+'</tr>');
         aux=[];
+        counter = 0;
       }else{
         aux.push(value);
         if(array[index+1]==null){
-          $('#'+table_id+' > tbody:last').append('<tr>'+aux[0]+'</tr>');
+          console.log("vai o resto");
+          $('#'+table_id+' > tbody:last').append('<tr>'+toStringy(aux)+'</tr>');
         }
       }
     }); 
-}  
+  }  
+
+  function toStringy(array) {
+    var all = "";
+    for (var i = 0; i < array.length; i++) {
+      all = all + array[i];
+    };
+    return all
+  }
