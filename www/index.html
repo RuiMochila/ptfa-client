@@ -50,12 +50,12 @@
               </select>
               </div>
               <div class="input-row">
-                <label for="contact">Telemóvel</label>
-                <input type="text" name="vote[contact]">
+                <label for="vote_contact">Telemóvel</label>
+                <input type="text" id="vote_contact" name="vote[contact]">
               </div>
               <div class="input-row">
-                <label for="contact">Localidade</label>
-                <input type="text" name="vote[place]">
+                <label for="vote_place">Localidade</label>
+                <input type="text" id="vote_place" name="vote[place]">
               </div>
             </div>
 
@@ -209,7 +209,7 @@
 
             
           <label for="vote_artista_ver"><h4>Que artista(s) gostavas de ver actuar num festival português no próximo ano?</h4></label>
-            <input id="vote_artista_ver" name="vote[artista_ver]" size="30" type="text">
+            <input id="vote_artista_ver" name="vote[artista_ver]" type="text">
 
           <!-- </form> -->
                 
@@ -298,6 +298,29 @@
             
             <!-- Faço o form aqui com hidden fields e altero os valores com jquery -->
             <!-- Depois submeto via ajax -->
+            <!-- Pessoal -->
+            <input type="hidden" id="input-name" name="vote[name]">
+            <input type="hidden" id="input-email" name="vote[email]">
+            <input type="hidden" id="input-age" name="vote[age]">
+            <input type="hidden" id="input-contact" name="vote[contact]">
+            <input type="hidden" id="input-place" name="vote[place]">
+            <input type="hidden" id="input-sex" name="vote[sex]">
+            
+            <input type="hidden" id="input-artista" name="vote[valoriza_artista]">
+            <input type="hidden" id="input-localizacao" name="vote[valoriza_localizacao]">
+            <input type="hidden" id="input-convivio" name="vote[valoriza_convivio]">
+            <input type="hidden" id="input-campismo" name="vote[valoriza_campismo]">
+            <input type="hidden" id="input-higiene" name="vote[valoriza_higiene]"> 
+            <input type="hidden" id="input-preco" name="vote[valoriza_preco]"> 
+            <input type="hidden" id="input-restauracao" name="vote[valoriza_restauracao]">
+            <input type="hidden" id="input-brindes" name="vote[valoriza_brindes]"> 
+            <input type="hidden" id="input-data" name="vote[valoriza_data]"> 
+            <input type="hidden" id="input-meteorologia" name="vote[valoriza_meteorologia]"> 
+            <input type="hidden" id="input-acessibilidades" name="vote[valoriza_acessibilidades]">
+            <input type="hidden" id="input-sustentabilidade" name="vote[valoriza_sustentabilidade]">
+
+            <input type="hidden" id="input-artista-ver" name="vote[artista_ver]">
+            <!-- Categorias -->
             <input type="hidden" id="input-grande" name="vote[grande]">
             <input type="hidden" id="input-media" name="vote[media]">
             <input type="hidden" id="input-pequena" name="vote[pequena]">

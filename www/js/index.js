@@ -3,7 +3,7 @@ $(document).on("ready", function () {
     initPageslider();
     route();
     $('.hidden_errors').hide();
-    $('.hidden').hide();
+    $('.hidden-errors').hide();
     // answearListeners(); 
     appendNominees(grandeArray, "grandeTable", 2);
     appendNominees(mediaArray, "mediaTable", 2);
@@ -51,6 +51,69 @@ $(document).on("ready", function () {
     
     if (!problem) {
         //set dos valores nos hidden fields
+        
+        $("#input-name").val($('#vote_name').val());
+         $("#input-email").val($('#vote_email').val()); 
+         $("#input-age").val($('#vote_age').val()); 
+         $("#input-contact").val($('#vote_contact').val()); 
+         $("#input-place").val($('#vote_place').val()); 
+         $("#input-sex").val($('#vote_sex').val()); 
+            
+        // Estes só podem tre value se selected...
+         if($('#vote_valoriza_artista').is(":checked")){
+            $("#input-artista").val("1"); 
+         }
+
+         if($('#vote_valoriza_localizacao').is(":checked")){
+            $("#input-localizacao").val("1"); 
+         }
+
+         if($('#vote_valoriza_convivio').is(":checked")){
+            $("#input-convivio").val("1"); 
+         }
+         if($('#vote_valoriza_campismo').is(":checked")){
+            $("#input-campismo").val("1"); 
+         }
+         if($('#vote_valoriza_higiene').is(":checked")){
+            $("#input-higiene").val("1"); 
+         }
+         if($('#vote_valoriza_preco').is(":checked")){
+            $("#input-preco").val("1"); 
+          }  
+         if($('#vote_valoriza_restauracao').is(":checked")){
+            $("#input-restauracao").val("1"); 
+         }
+         if($('#vote_valoriza_brindes').is(":checked")){
+            $("#input-brindes").val("1"); 
+         }
+         if($('#vote_valoriza_data').is(":checked")){
+            $("#input-data").val("1"); 
+         }
+         if($('#vote_valoriza_meteorologia').is(":checked")){
+            $("#input-meteorologia").val("1"); 
+         }
+         if($('#vote_valoriza_acessibilidades').is(":checked")){
+            $("#input-acessibilidades").val("1"); 
+         }
+         if($('#vote_valoriza_sustentabilidade').is(":checked")){
+            $("#input-sustentabilidade").val("1"); 
+        }   
+        
+        $("#input-artista-ver").val($("#vote_artista_ver").val()); 
+
+
+
+        changePage($("#main"),"right");
+        <!-- Categorias -->
+         // $("#input-grande").val($('#').val()); 
+         // $("#input-media").val($('#').val()); 
+         // $("#input-pequena").val($('#').val()); 
+         // $("#input-urbano").val($('#').val()); 
+         // $("#input-naoUrbano").val($('#').val()); 
+         // $("#input-revelacao").val($('#').val()); 
+         // $("#input-cabeca").val($('#').val()); 
+         // $("#input-wc").val($('#').val()); 
+         // $("#input-campismo").val($('#').val()); 
         //slide page main
     };
     });
