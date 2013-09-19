@@ -20,8 +20,211 @@
       <!-- onmousedown='return false;' retirei para consegur carregar nas textbox -->
   <div id="pages-main" class="pages-perspective">
       
+      <div id="" class"page page-init">
+        <header class="bar-title">
+        <h1 class="title">Portugal Festival Awards</h1>
+        </header>
+             <div class="content">
+              <div style="text-align:center;">
+                <h2>Inscrição Pessoal</h2>
+              </div>
+            <!-- <form> -->
+            <div class="input-group">
+              <div class="input-row">
+                <label for="vote_place">Nome</label>
+                <input id="vote_place" name="vote[place]" type="text">
+              </div>
+              <div class="input-row">
+                <label for="vote_age">Idade</label>
+                <input id="vote_age" name="vote[age]" type="number">
+              </div>
+              <div class="input-row">
+                <label for="email">Email</label>
+                <input type="email" placeholder="ratchetframework@gmail.com">
+              </div>
+              <div class="input-row">
+                <label for="vote_sex">Sexo</label>
+              <select id="vote_sex" name="vote[sex]">
+                <option value="Masculino" selected="selected">Masculino</option>
+                <option value="Feminino">Feminino</option>
+              </select>
+              </div>
+            </div>
 
-      <div id="main" class="page page-init">
+            <label for="vote_valoriza_festival"><h4>O que é que valorizas mais num festival de música?</h4></label>
+          <!--   <div class="roundedTwo">
+                <input type="checkbox" id="roundedTwo" name="vote[valoriza_artista]" value="1"/>
+              <label for="roundedTwo"></label>
+            </div>
+            
+            <div class="roundedTwo">
+              <input type="checkbox" id="roundedThree" name="vote[valoriza_localizacao]" value="1"/>
+              <label for="roundedTwo"></label>
+            </div> -->
+            <table>
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_artista" value="1" name="vote[valoriza_artista]" />
+                      <label for="vote_valoriza_artista"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>Os artistas/estilo musical</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_localizacao" value="1" name="vote[valoriza_localizacao]" />
+                      <label for="vote_valoriza_localizacao"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A localização</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_convivio" name="vote[valoriza_convivio]" value="1">
+                      <label for="vote_valoriza_convivio"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>O convívio entre pessoas</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_campismo" name="vote[valoriza_campismo]" value="1">
+                      <label for="vote_valoriza_campismo"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>O campismo</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_higiene" name="vote[valoriza_higiene]" value="1">
+                      <label for="vote_valoriza_higiene"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A higiene</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_preco" name="vote[valoriza_preco]" value="1">
+                      <label for="vote_valoriza_preco"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>O preço</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_restauracao" name="vote[valoriza_restauracao]" value="1">
+                      <label for="vote_valoriza_restauracao"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A restauração</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_brindes" name="vote[valoriza_brindes]" value="1">
+                      <label for="vote_valoriza_brindes"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>Os brindes</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_data" name="vote[valoriza_data]" value="1">
+                      <label for="vote_valoriza_data"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A data</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_meteorologia" name="vote[valoriza_meteorologia]" value="1">
+                      <label for="vote_valoriza_meteorologia"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A meteorologia</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_accessibilidades" name="vote[valoriza_acessibilidades]" value="1">
+                      <label for="vote_valoriza_accessibilidades"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>As acessibilidades</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_sustentabilidade" name="vote[valoriza_sustentabilidade]" value="1"> 
+                      <label for="vote_valoriza_sustentabilidade"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A preocupação com a sustentabilidade</h5></td>
+              </tr>
+
+            </table>
+
+            
+          <label for="vote_artista_ver"><h4>Que artista(s) gostavas de ver actuar num festival português no próximo ano?</h4></label>
+            <input id="vote_artista_ver" name="vote[artista_ver]" size="30" type="text">
+
+          <!-- </form> -->
+                
+        <div class="errors hidden">
+          <label>Falta responder a:</label>
+          <label class="hidden_error" id="error_email">O email que introduziste não está correcto!</label>
+          <label class="hidden_error" id="error_name">Ainda não introduziste o teu nome!</label>
+          <label class="hidden_error" id="error_age">Ainda não introduziste a tua idade!</label>
+          <label class="hidden_error" id="error_sex">Ainda não introduziste o teu sexo!</label>
+      </div>
+        <a id="doneMe" class="button button-block">Continuar</a>
+      </div>
+
+      <div id="main" class="page">
         <header class="bar-title">
         <h1 class="title">Portugal Festival Awards</h1>
         </header>
@@ -90,7 +293,9 @@
                 </a>
               </li>
             </ul>
+            
             <!-- Faço o form aqui com hidden fields e altero os valores com jquery -->
+            <!-- Depois submeto via ajax -->
             <input type="hidden" id="input-grande" name="vote[grande]">
             <input type="hidden" id="input-media" name="vote[media]">
             <input type="hidden" id="input-pequena" name="vote[pequena]">
@@ -249,7 +454,7 @@
               <h1 class="title">Some Mim</h1>
             </header>
             <div class="content">
-              <form>
+            <form>
             <div class="input-group">
               <div class="input-row">
                 <label for="vote_place">Nome</label>
