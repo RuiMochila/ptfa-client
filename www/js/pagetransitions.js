@@ -56,7 +56,6 @@ function changePage($next, animation) {
 
 	$current.addClass( outClass ).on( animEndEventName, function() {
 		$current.off( animEndEventName );
-		console.log("addClass current terminou");
 		endCurrPage = true;
 		if( endNextPage ) {
 			onEndAnimation( $current, $next );
