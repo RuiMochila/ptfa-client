@@ -713,7 +713,7 @@ select {
 /* Labels get floated left with a set percentage width */
 .input-row label {
   float: left;
-  width: 15%; /* MUDEI era 25*/
+  width: 20%; /* MUDEI era 25*/
   padding: 11px 10px 9px 13px; /* Optimizing the baseline for mobile. */
   font-weight: bold;
 }
@@ -721,7 +721,7 @@ select {
 /* Actual inputs float to right of labels and also have a set percentage */
 .input-row label + input {
   float: right;
-  width: 75%; /* MUDEI era 65*/
+  width: 80%; /* MUDEI era 65*/
   padding-left: 0;
   margin-bottom: 0;
   border-bottom: 0;
@@ -730,7 +730,7 @@ select {
 /* Juntei este */
 .input-row label + select {
   float: right;
-  width: 75%; 
+  width: 80%; 
   padding-left: 0;
   margin-bottom: 0;
   border-bottom: 0;

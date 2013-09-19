@@ -19,35 +19,35 @@
       onselectstart='return false;'> 
       <!-- onmousedown='return false;' retirei para consegur carregar nas textbox -->
   <div id="pages-main" class="pages-perspective">
-      
-      <div id="" class"page page-init">
+
+      <div id="about-me" class"page page-init">
         <header class="bar-title">
         <h1 class="title">Portugal Festival Awards</h1>
         </header>
-             <div class="content">
-              <div style="text-align:center;">
-                <h2>Inscrição Pessoal</h2>
-              </div>
+          <div class="content">
+            <div style="text-align:center;">
+              <h2>Inscrição Pessoal</h2>
+            </div>
             <!-- <form> -->
             <div class="input-group">
               <div class="input-row">
-                <label for="vote_name">Nome *</label>
+                <label for="vote_name">Nome*</label>
                 <input id="vote_name" name="vote[name]" type="text">
               </div>
               <div class="input-row">
-                <label for="vote_age">Idade *</label>
+                <label for="vote_age">Idade*</label>
                 <input id="vote_age" name="vote[age]" type="number">
               </div>
               <div class="input-row">
-                <label for="email">Email *</label>
+                <label for="email">Email*</label>
                 <input id="vote_email" type="email" name="vote[email]">
               </div>
               <div class="input-row">
-                <label for="vote_sex">Sexo *</label>
-              <select id="vote_sex" name="vote[sex]">
-                <option value="Masculino" selected="selected">Masculino</option>
-                <option value="Feminino">Feminino</option>
-              </select>
+                <label for="vote_sex">Sexo*</label>
+                <select id="vote_sex" name="vote[sex]">
+                  <option value="Masculino" selected="selected">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                </select>
               </div>
               <div class="input-row">
                 <label for="vote_contact">Telemóvel</label>
@@ -224,6 +224,9 @@
           campos obrigatórios*
         </div>
         <a id="doneMe" class="button button-block">Continuar</a>
+      
+        </div>
+      
       </div>
 
       <div id="main" class="page">
@@ -288,12 +291,6 @@
                 </a>
               </li>
               
-              <li>
-                <a id="me">
-                  Sobre mim
-                  <span class="chevron"></span>
-                </a>
-              </li>
             </ul>
             
             <!-- Faço o form aqui com hidden fields e altero os valores com jquery -->

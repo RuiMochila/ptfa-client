@@ -17,7 +17,6 @@ $(document).on("ready", function () {
     answear();
 
     $('#doneMe').on('click', function(e) {
-        console.log("clicado");
       $('.hidden_error').hide();
       $('.hidden-errors').hide();
       var problem = false;
@@ -28,7 +27,6 @@ $(document).on("ready", function () {
       $('.hidden-errors').show();
     }
     if($('#vote_email').val()==""){
-        console.log("theres a problem");
       problem = true;
       $('#error_email').show();
       $('.hidden-errors').show();
@@ -149,6 +147,7 @@ function route() {
     });
 
     $("#grande").on('click', function(e) {
+        console.log("chamado");
         changePage($("#grandeView"),"right");
     });
 

@@ -31,6 +31,7 @@ var	isAnimating = false,
 
 //animações disponívels: "left" e "right"
 function changePage($next, animation) {
+	console.log("change page chamado");
 	$current = $('.page-current');
 
 	if( isAnimating ) {
@@ -55,6 +56,7 @@ function changePage($next, animation) {
 
 	$current.addClass( outClass ).on( animEndEventName, function() {
 		$current.off( animEndEventName );
+		console.log("addClass current terminou");
 		endCurrPage = true;
 		if( endNextPage ) {
 			onEndAnimation( $current, $next );
