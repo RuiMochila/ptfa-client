@@ -31,36 +31,35 @@
             <!-- <form> -->
             <div class="input-group">
               <div class="input-row">
-                <label for="vote_place">Nome</label>
-                <input id="vote_place" name="vote[place]" type="text">
+                <label for="vote_name">Nome *</label>
+                <input id="vote_name" name="vote[name]" type="text">
               </div>
               <div class="input-row">
-                <label for="vote_age">Idade</label>
+                <label for="vote_age">Idade *</label>
                 <input id="vote_age" name="vote[age]" type="number">
               </div>
               <div class="input-row">
-                <label for="email">Email</label>
-                <input type="email" placeholder="ratchetframework@gmail.com">
+                <label for="email">Email *</label>
+                <input id="vote_email" type="email" name="vote[email]">
               </div>
               <div class="input-row">
-                <label for="vote_sex">Sexo</label>
+                <label for="vote_sex">Sexo *</label>
               <select id="vote_sex" name="vote[sex]">
                 <option value="Masculino" selected="selected">Masculino</option>
                 <option value="Feminino">Feminino</option>
               </select>
               </div>
+              <div class="input-row">
+                <label for="contact">Telemóvel</label>
+                <input type="text" name="vote[contact]">
+              </div>
+              <div class="input-row">
+                <label for="contact">Localidade</label>
+                <input type="text" name="vote[place]">
+              </div>
             </div>
 
             <label for="vote_valoriza_festival"><h4>O que é que valorizas mais num festival de música?</h4></label>
-          <!--   <div class="roundedTwo">
-                <input type="checkbox" id="roundedTwo" name="vote[valoriza_artista]" value="1"/>
-              <label for="roundedTwo"></label>
-            </div>
-            
-            <div class="roundedTwo">
-              <input type="checkbox" id="roundedThree" name="vote[valoriza_localizacao]" value="1"/>
-              <label for="roundedTwo"></label>
-            </div> -->
             <table>
               <tr>
                 <td>
@@ -214,13 +213,16 @@
 
           <!-- </form> -->
                 
-        <div class="errors hidden">
-          <label>Falta responder a:</label>
-          <label class="hidden_error" id="error_email">O email que introduziste não está correcto!</label>
-          <label class="hidden_error" id="error_name">Ainda não introduziste o teu nome!</label>
-          <label class="hidden_error" id="error_age">Ainda não introduziste a tua idade!</label>
-          <label class="hidden_error" id="error_sex">Ainda não introduziste o teu sexo!</label>
-      </div>
+        <div class="errors hidden-errors">
+          <label>Falta responder a:</label><br>
+          <label class="hidden_error" id="error_email">O email que introduziste não está correcto!<br></label>
+          <label class="hidden_error" id="error_name">Ainda não introduziste o teu nome!<br></label>
+          <label class="hidden_error" id="error_age">Ainda não introduziste a tua idade!<br></label>
+          <label class="hidden_error" id="error_sex">Ainda não introduziste o teu sexo!<br></label>
+        </div>
+        <div style="color: red;">
+          campos obrigatórios*
+        </div>
         <a id="doneMe" class="button button-block">Continuar</a>
       </div>
 
@@ -448,61 +450,6 @@
             </div>        
       </div>
 
-      <div id="meView" class="page">
-        <header class="bar-title">
-        <a class="button back">Back</a>
-              <h1 class="title">Some Mim</h1>
-            </header>
-            <div class="content">
-            <form>
-            <div class="input-group">
-              <div class="input-row">
-                <label for="vote_place">Nome</label>
-                <input id="vote_place" name="vote[place]" type="text">
-              </div>
-              <div class="input-row">
-                <label for="vote_age">Idade</label>
-                <input id="vote_age" name="vote[age]" type="number">
-              </div>
-              <div class="input-row">
-                <label for="email">Email</label>
-                <input type="email" placeholder="ratchetframework@gmail.com">
-              </div>
-              <div class="input-row">
-                <label for="vote_sex">Sexo</label>
-              <select id="vote_sex" name="vote[sex]">
-                <option value="Masculino" selected="selected">Masculino</option>
-                <option value="Feminino">Feminino</option>
-              </select>
-              </div>
-            </div>
-
-            
-            <label for="vote_valoriza_festival">O que é que valorizas mais num festival de música?</label>
-            
-            
-            <select id="vote_valoriza_festival" name="vote[valoriza_festival]">
-              <option value="1">Os artistas/estilo musical</option>
-              <option value="2">A localização</option>
-              <option value="3">O convívio entre pessoas</option>
-              <option value="4">O campismo</option>
-              <option value="5">A higiene</option>
-              <option value="6">O preço</option>
-              <option value="7">A restauração</option>
-              <option value="8">Os brindes</option>
-              <option value="9">A data</option>
-              <option value="10">A meteorologia</option>
-              <option value="11">As acessibilidades</option>
-              <option value="12">A preocupação com a sustentabilidade</option>
-            </select>
-          
-          <label for="vote_artista_ver">Que artista(s) gostavas de ver actuar num festival português no próximo ano?</label>
-            <input id="vote_artista_ver" name="vote[artista_ver]" size="30" type="text">
-
-          </form>
-                <a id="doneMe" class="button button-block back">Continuar</a>
-            </div>        
-      </div>
 
       <div id="thanksView" class="page">
         <header class="bar-title">

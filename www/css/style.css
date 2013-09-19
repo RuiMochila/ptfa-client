@@ -16,6 +16,10 @@
 	background: #E9001D;
 }
 
+.errors{
+	color: red;
+}
+
 
 
 input[type=checkbox] {
