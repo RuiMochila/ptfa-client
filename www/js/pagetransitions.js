@@ -31,9 +31,9 @@ var	isAnimating = false,
 
 //animações disponívels: "left" e "right"
 function changePage($next, animation) {
-	console.log("change page chamado");
 	$current = $('.page-current');
 
+	
 	if( isAnimating ) {
 		return false;
 	}

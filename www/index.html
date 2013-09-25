@@ -20,7 +20,7 @@
       <!-- onmousedown='return false;' retirei para consegur carregar nas textbox -->
   <div id="pages-main" class="pages-perspective">
 
-      <div id="main" class="page page-init">
+      <div id="main" class="page">
         <header class="bar-title">
         <h1 class="title">Portugal Festival Awards</h1>
         </header>
@@ -73,6 +73,7 @@
                 <a id="wc">
                   Melhores WC's
                   <span class="chevron"></span>
+                  <!-- <span class="count-positive">✓</span> -->
                 </a>
               </li>
               <li>
@@ -119,7 +120,20 @@
             <input type="hidden" id="input-wc" name="vote[wc]">
             <input type="hidden" id="input-campismo" name="vote[campismo]">
 
-            <a class="button button-block">Votar!</a>
+            <div class="errors hidden-errors">
+              <label>Falta responder a:</label><br>
+              <label class="hidden_error" id="error_grande">Melhor Festival de Grande Dimensão <br></label>
+              <label class="hidden_error" id="error_media">Melhor Festival de Média Dimensão <br></label>
+              <label class="hidden_error" id="error_pequena">Melhor Festival de Pequena Dimensão <br></label>
+              <label class="hidden_error" id="error_urbano">Melhor Festival Urbano <br></label>
+              <label class="hidden_error" id="error_naoUrbano">Melhor Festival não Urbano <br></label>
+              <label class="hidden_error" id="error_revelacao">Artista Revelação <br></label>
+              <label class="hidden_error" id="error_cabeca">Melhor Cabeça de Cartaz <br></label>
+              <label class="hidden_error" id="error_wc">Melhores WC's <br></label>
+              <label class="hidden_error" id="error_campismo">Melhor Campismo <br></label>
+            </div>
+
+            <a id="votar-button" class="button button-block">Votar!</a>
             
           </div>
       </div>
@@ -261,8 +275,17 @@
             </div>        
       </div>
 
+      <div id="thanksView" class="page">
+        <header class="bar-title">
+              <h1 class="title">Obrigado</h1>
+            </header>
+            <div class="content">
+                Obrigado pela tua participação!
+            </div>        
+      </div>
 
-      <div id="me" class="page">
+
+      <div id="me" class="page page-init">
         <header class="bar-title">
         <h1 class="title">Portugal Festival Awards Me</h1>
         </header>
@@ -472,15 +495,6 @@
       
       </div>
 
-
-      <div id="thanksView" class="page">
-        <header class="bar-title">
-              <h1 class="title">Obrigado</h1>
-            </header>
-            <div class="content">
-                Obrigado pela tua participação!
-            </div>        
-      </div>
 
     </div>
 
