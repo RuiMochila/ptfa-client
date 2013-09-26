@@ -15,6 +15,7 @@ $(document).on("ready", function () {
     appendNominees(wcArray, "wcTable", 2);
     appendNominees(campismoArray, "campismoTable", 2);
     answear();
+    submitListener();
 
     $('#doneMe').on('click', function(e) {
       $('.hidden_error').hide();
@@ -466,10 +467,61 @@ function appendNominees(nominees, table_id, cols) {
   }
 
   function validateEmail($email) {
-  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-  if( !emailReg.test( $email ) ) {
-    return false;
-  } else {
-    return true;
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    if( !emailReg.test( $email ) ) {
+      return false;
+    } else {
+      return true;
+    }
   }
-}
+
+  function submitListener() {
+    $('#votar-button').on('click', function() {
+
+      var url = "http://localhost:3000/votes";
+        $.ajax({
+          type: "POST",
+          url: url,
+          // data: $("#loginForm form").serializeArray(),
+          data: {format: "json",
+              vote:{
+                name: $('#input-name').val(), 
+                email: $('#input-email').val(),
+                age: $('#input-age').val(), 
+                place: $('#input-place').val(),
+                contact: $('#input-contact').val(),
+                sex: $('#input-sex').val(),
+                valoriza_artista: $('#input-artista').val(),
+                valoriza_localizacao: $('#input-localizacao').val(),
+                valoriza_convivio: $('#input-convivio').val(),
+                valoriza_convivio: $('#input-convivio').val(),
+                valoriza_campismo: $('#input-campismo').val(),
+                valoriza_higiene: $('#input-higiene').val(),
+                valoriza_preco: $('#input-preco').val(),
+                valoriza_restauracao: $('#input-restauracao').val(),
+                valoriza_brindes: $('#input-brindes').val(),
+                valoriza_data: $('#input-data').val(),
+                valoriza_meteorologia: $('#input-meteorologia').val(),
+                valoriza_acessibilidades: $('#input-acessibilidades').val(),
+                valoriza_sustentabilidade: $('#input-sustentabilidade').val(),
+                artista_ver: $('#input-artista-ver').val(),
+                grande_dimensao: $('#input-grande').val(),
+                media_dimensao: $('#input-media').val(),
+                pequena_dimensao: $('#input-pequena').val(),
+                urbano: $('#input-urbano').val(),
+                nao_urbano: $('#input-naoUrbano').val(),
+                artista_revelacao: $('#input-revelacao').val(),
+                cabeca_cartaz: $('#input-cabeca').val(),
+                wc: $('#input-wc').val(),
+                campismo: $('#input-campismo').val()}
+              },
+          //cache: false,
+          dataType: "json",
+          success: function(res){
+            console.log(res);
+            
+          }  // FIM SUCCESS AJAX    
+        });
+
+    });
+  }
