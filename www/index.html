@@ -82,7 +82,12 @@
                   <span class="chevron"></span>
                 </a>
               </li>
-              
+              <li>
+                <a id="opiniao">
+                  Opinião
+                  <span class="chevron"></span>
+                </a>
+              </li>
             </ul>
             
             <!-- Faço o form aqui com hidden fields e altero os valores com jquery -->
@@ -149,7 +154,7 @@
                   </tbody>
                 </table>
                 
-                <a id="doneGrande" onclick='changePage($("#mediaView"),"right");' class="button button-block">Continuar</a>
+                <a id="doneGrande" class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -164,7 +169,7 @@
             </tbody>
           </table>
 
-          <a id="doneMedia" onclick='changePage($("#pequenaView"),"right");' class="button button-block">Continuar</a>
+          <a id="doneMedia" class="button button-block">Continuar</a>
         </div>
       </div>
 
@@ -179,7 +184,7 @@
                   </tbody>
                 </table>
                 
-                <a id="donePequena" onclick='changePage($("#urbanoView"),"right");' class="button button-block">Continuar</a>
+                <a id="donePequena" class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -195,23 +200,22 @@
             </tbody>
           </table>
           
-          <a id="doneUrbano" onclick='changePage($("#naoUrbanoView"),"right");' class="button button-block">Continuar</a>
+          <a id="doneUrbano" class="button button-block">Continuar</a>
         </div>
       </div>
       
       <div id="naoUrbanoView" class="page">
         <header class="bar-title">
-        <a class="button back">Back</a>
-              <h1 class="title">Não Urbano</h1>
-            </header>
-            <div class="content">
-                <table id="naoUrbanoTable" class="festivals">
-                  <tbody>
-                  </tbody>
-                </table>
-          
-                <a id="doneNaoUrbano" onclick='changePage($("#revelacaoView"),"right");' class="button button-block back">Continuar</a>
-            </div>        
+          <a class="button back">Back</a>
+          <h1 class="title">Não Urbano</h1>
+        </header>
+        <div class="content">
+          <table id="naoUrbanoTable" class="festivals">
+            <tbody>
+            </tbody>
+          </table>
+          <a id="doneNaoUrbano" class="button button-block">Continuar</a>
+        </div>        
       </div>
 
       <div id="revelacaoView" class="page">
@@ -225,7 +229,7 @@
               </tbody>
             </table>
             
-            <a id="doneRevelacao" onclick='changePage($("#cabecaView"),"right");' class="button button-block">Continuar</a>
+            <a id="doneRevelacao" class="button button-block">Continuar</a>
           </div>        
       </div>
 
@@ -240,23 +244,7 @@
               </tbody>
             </table>
                 
-                <a id="doneCabeca" onclick='changePage($("#wcView"),"right");' class="button button-block">Continuar</a>
-            </div>        
-      </div>
-
-      
-      <div id="campismoView" class="page">
-        <header class="bar-title">
-        <a class="button back">Back</a>
-              <h1 class="title">Melhor Campismo</h1>
-            </header>
-            <div class="content">
-              <table id="campismoTable" class="festivals">
-                <tbody>
-                </tbody>
-              </table>
-          
-                <a id="doneCampismo" class="button button-block back">Continuar</a>
+                <a id="doneCabeca" class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -271,7 +259,22 @@
                   </tbody>
                 </table>
           
-                <a id="doneWC" onclick='changePage($("#campismoView"),"right");' class="button button-block back">Continuar</a>
+                <a id="doneWC" class="button button-block">Continuar</a>
+            </div>        
+      </div>
+
+      <div id="campismoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Melhor Campismo</h1>
+            </header>
+            <div class="content">
+              <table id="campismoTable" class="festivals">
+                <tbody>
+                </tbody>
+              </table>
+          
+                <a id="doneCampismo" class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -281,7 +284,7 @@
             </header>
             <div class="content">
                 Obrigado pela tua participação!
-            </div>        
+            </div>
       </div>
 
 
@@ -324,7 +327,31 @@
                 <input type="text" id="vote_place" name="vote[place]">
               </div>
             </div>
+          <!-- </form> -->
+                
+          <div class="errors hidden-errors">
+            <label>Falta responder a:</label><br>
+            <label class="hidden_error" id="error_email">O email que introduziste não está correcto!<br></label>
+            <label class="hidden_error" id="error_name">Ainda não introduziste o teu nome!<br></label>
+            <label class="hidden_error" id="error_age">Ainda não introduziste a tua idade!<br></label>
+            <label class="hidden_error" id="error_sex">Ainda não introduziste o teu sexo!<br></label>
+          </div>
+          <div style="color: red;">
+            campos obrigatórios*
+          </div>
+          <a id="doneMe" class="button button-block">Continuar</a>
+         
+        </div>
+      
+      </div>
 
+      <div id="opiniaoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+          <h1 class="title">Portugal Festival Awards</h1>
+        </header>
+            <div class="content">
+              
             <label for="vote_valoriza_festival"><h4>O que é que valorizas mais num festival de música?</h4></label>
             <table>
               <tr>
@@ -477,24 +504,10 @@
           <label for="vote_artista_ver"><h4>Que artista(s) gostavas de ver actuar num festival português no próximo ano?</h4></label>
             <input id="vote_artista_ver" name="vote[artista_ver]" type="text">
 
-          <!-- </form> -->
-                
-        <div class="errors hidden-errors">
-          <label>Falta responder a:</label><br>
-          <label class="hidden_error" id="error_email">O email que introduziste não está correcto!<br></label>
-          <label class="hidden_error" id="error_name">Ainda não introduziste o teu nome!<br></label>
-          <label class="hidden_error" id="error_age">Ainda não introduziste a tua idade!<br></label>
-          <label class="hidden_error" id="error_sex">Ainda não introduziste o teu sexo!<br></label>
-        </div>
-        <div style="color: red;">
-          campos obrigatórios*
-        </div>
-        <a id="doneMe" class="button button-block">Continuar</a>
-         
-          </div>
-      
+          
+              <a id="doneOpiniao" class="button button-block back">Continuar!</a>
+            </div>        
       </div>
-
 
     </div>
 

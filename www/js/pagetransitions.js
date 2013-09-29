@@ -57,17 +57,19 @@ function changePage($next, animation) {
 	$current.addClass( outClass ).on( animEndEventName, function() {
 		$current.off( animEndEventName );
 		endCurrPage = true;
-		if( endNextPage ) {
+		// if( endNextPage ) {
+			console.log("endNextPage");
 			onEndAnimation( $current, $next );
-		}
+		// }
 	} );
 
 	$next.addClass( inClass ).on( animEndEventName, function() {
 		$next.off( animEndEventName );
 		endNextPage = true;
-		if( endCurrPage ) {
+		// if( endCurrPage ) {
+			console.log("endCurrPage");
 			onEndAnimation( $current, $next );
-		}
+		// }
 	} );
 
 	if( !support ) {
@@ -77,6 +79,7 @@ function changePage($next, animation) {
 }
 
 function onEndAnimation( $outpage, $inpage ) {
+	console.log("end animation");
 	endCurrPage = false;
 	endNextPage = false;
 	resetPage( $outpage, $inpage );
@@ -84,6 +87,7 @@ function onEndAnimation( $outpage, $inpage ) {
 }
 
 function resetPage( $outpage, $inpage ) {
+	console.log("reset page");
 	$outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
 	$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' page-current' );
 }

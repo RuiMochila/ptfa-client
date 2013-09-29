@@ -4,7 +4,7 @@ $(document).on("ready", function () {
     route();
     $('.hidden_errors').hide();
     $('.hidden-errors').hide();
-    // answearListeners(); 
+    answearListeners(); 
     appendNominees(grandeArray, "grandeTable", 2);
     appendNominees(mediaArray, "mediaTable", 2);
     appendNominees(pequenaArray, "pequenaTable", 2);
@@ -57,49 +57,6 @@ $(document).on("ready", function () {
          $("#input-contact").val($('#vote_contact').val()); 
          $("#input-place").val($('#vote_place').val()); 
          $("#input-sex").val($('#vote_sex').val()); 
-            
-        // Estes só podem tre value se selected...
-         if($('#vote_valoriza_artista').is(":checked")){
-            $("#input-artista").val("1"); 
-         }
-
-         if($('#vote_valoriza_localizacao').is(":checked")){
-            $("#input-localizacao").val("1"); 
-         }
-
-         if($('#vote_valoriza_convivio').is(":checked")){
-            $("#input-convivio").val("1"); 
-         }
-         if($('#vote_valoriza_campismo').is(":checked")){
-            $("#input-campismo").val("1"); 
-         }
-         if($('#vote_valoriza_higiene').is(":checked")){
-            $("#input-higiene").val("1"); 
-         }
-         if($('#vote_valoriza_preco').is(":checked")){
-            $("#input-preco").val("1"); 
-          }  
-         if($('#vote_valoriza_restauracao').is(":checked")){
-            $("#input-restauracao").val("1"); 
-         }
-         if($('#vote_valoriza_brindes').is(":checked")){
-            $("#input-brindes").val("1"); 
-         }
-         if($('#vote_valoriza_data').is(":checked")){
-            $("#input-data").val("1"); 
-         }
-         if($('#vote_valoriza_meteorologia').is(":checked")){
-            $("#input-meteorologia").val("1"); 
-         }
-         if($('#vote_valoriza_acessibilidades').is(":checked")){
-            $("#input-acessibilidades").val("1"); 
-         }
-         if($('#vote_valoriza_sustentabilidade').is(":checked")){
-            $("#input-sustentabilidade").val("1"); 
-        }   
-        
-        $("#input-artista-ver").val($("#vote_artista_ver").val()); 
-
 
 
         changePage($("#main"),"right");
@@ -178,50 +135,66 @@ function onDeviceReady() {
 function route() {
     
     $("#urbano").on('click', function(e) {
+      isAnimating = false;
         changePage($("#urbanoView"),"right");
     });
 
     $("#media").on('click', function(e) {
+      isAnimating = false;
         changePage($("#mediaView"),"right");
     });
 
     $("#pequena").on('click', function(e) {
+      isAnimating = false;
         changePage($("#pequenaView"),"right");
     });
 
     $("#revelacao").on('click', function(e) {
+      // isAnimating = false;
         changePage($("#revelacaoView"),"right");
     });
 
     $("#cabeca").on('click', function(e) {
+      // isAnimating = false;
         changePage($("#cabecaView"),"right");
     });
 
     $("#grande").on('click', function(e) {
-        console.log("chamado");
+      // isAnimating = false;
+        // console.log("chamado");
         changePage($("#grandeView"),"right");
     });
 
     $("#campismo").on('click', function(e) {
+      // isAnimating = false;
         changePage($("#campismoView"),"right");
     });
 
     $("#wc").on('click', function(e) {
+      // isAnimating = false;
         changePage($("#wcView"),"right");
     });
 
     $("#naoUrbano").on('click', function(e) {
+      // isAnimating = false;
         changePage($("#naoUrbanoView"),"right");
     });
 
     $('.back').on('click', function(e) {
+      // isAnimating = false;
         changePage($("#main"),"left");
+    });
+
+    $('#opiniao').on('click', function(e) {
+      // isAnimating = false;
+        changePage($("#opiniaoView"),"right");
     });
 
 }
 
 function answearListeners() {
     $("#doneUrbano").on('click', function(e) {
+        changePage($("#naoUrbanoView"),"right");
         // $('#urbano').addClass( 'answeared' );
         // $('#urbano span').removeClass("chevron");
         // $('#urbano span').removeClass("count-positive");
@@ -230,6 +203,7 @@ function answearListeners() {
     });
 
     $("#doneMedia").on('click', function(e) {
+        changePage($("#pequenaView"),"right");
         // $('#media').addClass( 'answeared' );
         // $('#media span').removeClass("chevron");
         // $('#media span').removeClass("count-positive");
@@ -237,6 +211,7 @@ function answearListeners() {
     });
 
     $("#donePequena").on('click', function(e) {
+        changePage($("#urbanoView"),"right");
         // $('#pequena').addClass( 'answeared' );
         // $('#pequena span').removeClass("chevron");
         // $('#pequena span').removeClass("count-positive");
@@ -244,6 +219,7 @@ function answearListeners() {
     });
 
     $("#doneRevelacao").on('click', function(e) {
+        changePage($("#cabecaView"),"right");
         // $('#revelacao').addClass( 'answeared' );
         // $('#revelacao span').removeClass("chevron");
         // $('#revelacao span').removeClass("count-positive");
@@ -251,6 +227,7 @@ function answearListeners() {
     });
 
     $("#doneCabeca").on('click', function(e) {
+        changePage($("#wcView"),"right");
         // $('#cabeca').addClass( 'answeared' );
         // $('#cabeca span').removeClass("chevron");
         // $('#cabeca span').removeClass("count-positive");
@@ -258,6 +235,7 @@ function answearListeners() {
     });
 
     $("#doneGrande").on('click', function(e) {
+        changePage($("#mediaView"),"right");
         // $('#grande').addClass( 'answeared' );
         // $('#grande span').removeClass("chevron");
         // $('#grande span').removeClass("count-positive");
@@ -265,6 +243,7 @@ function answearListeners() {
     });
 
     $("#doneCampismo").on('click', function(e) {
+        changePage($("#opiniaoView"),"right");
         // $('#campismo').addClass( 'answeared' );
         // $('#campismo span').removeClass("chevron");
         // $('#campismo span').removeClass("count-positive");
@@ -272,6 +251,7 @@ function answearListeners() {
     });
 
     $("#doneWC").on('click', function(e) {
+        changePage($("#campismoView"),"right");
         // $('#wc').addClass( 'answeared' );
         // $('#wc span').removeClass("chevron");
         // $('#wc span').removeClass("count-positive");
@@ -279,6 +259,7 @@ function answearListeners() {
     });
 
     $("#doneNaoUrbano").on('click', function(e) {
+        changePage($("#revelacaoView"),"right");
         // $('#naoUrbano').addClass( 'answeared' );
         // $('#naoUrbano span').removeClass("chevron");
         // $('#naoUrbano span').removeClass("count-positive");
@@ -288,7 +269,12 @@ function answearListeners() {
     $("#doneMe").on('click', function(e) {
       $('#me').addClass( 'answeared' );
     });
-
+    
+    $("#doneOpiniao").on('click', function(e) {
+      $('#opiniao span').removeClass("chevron");
+      $('#opiniao span').addClass("count-positive");
+      $('#opiniao span').text('✓');
+    });
 }
 
 function answear() {
@@ -404,7 +390,7 @@ function answear() {
         $('#campismo span').addClass("count-positive");
         $('#campismo span').text('✓');
         $('#input-campismo').val($(this).attr('value'));
-        console.log($('#input-campismo').val());
+        // console.log($('#input-campismo').val());
         $('.campismo-answear').each(function() {
           $(this).removeClass("selected");
         });
@@ -476,7 +462,51 @@ function appendNominees(nominees, table_id, cols) {
   }
 
   function submitListener() {
+
     $('#votar-button').on('click', function() {
+        $(this).hide();
+         // Estes só podem ter value se selected...
+         if($('#vote_valoriza_artista').is(":checked")){
+            $("#input-artista").val("1"); 
+         }
+
+         if($('#vote_valoriza_localizacao').is(":checked")){
+            $("#input-localizacao").val("1"); 
+         }
+
+         if($('#vote_valoriza_convivio').is(":checked")){
+            $("#input-convivio").val("1"); 
+         }
+         if($('#vote_valoriza_campismo').is(":checked")){
+            $("#input-campismo").val("1"); 
+         }
+         if($('#vote_valoriza_higiene').is(":checked")){
+            $("#input-higiene").val("1"); 
+         }
+         if($('#vote_valoriza_preco').is(":checked")){
+            $("#input-preco").val("1"); 
+          }  
+         if($('#vote_valoriza_restauracao').is(":checked")){
+            $("#input-restauracao").val("1"); 
+         }
+         if($('#vote_valoriza_brindes').is(":checked")){
+            $("#input-brindes").val("1"); 
+         }
+         if($('#vote_valoriza_data').is(":checked")){
+            $("#input-data").val("1"); 
+         }
+         if($('#vote_valoriza_meteorologia').is(":checked")){
+            $("#input-meteorologia").val("1"); 
+         }
+         if($('#vote_valoriza_acessibilidades').is(":checked")){
+            $("#input-acessibilidades").val("1"); 
+         }
+         if($('#vote_valoriza_sustentabilidade').is(":checked")){
+            $("#input-sustentabilidade").val("1"); 
+        }   
+        
+        $("#input-artista-ver").val($("#vote_artista_ver").val()); 
+
 
       var url = "http://localhost:3000/votes";
         $.ajax({
@@ -518,9 +548,19 @@ function appendNominees(nominees, table_id, cols) {
           //cache: false,
           dataType: "json",
           success: function(res){
-            console.log(res);
+            if (res.status == "Failure") {
+              alert("Alguma coisa correu mal ou o email já existia.");
+              $('#votar-button').show();  
+            } else{
+              console.log(res);
+              changePage($("#thanksView"),"right");
+            };
             
-          }  // FIM SUCCESS AJAX    
+          },  // FIM SUCCESS AJAX    
+          failure: function(err) {
+            alert(err);
+            $('#votar-button').show();
+          }
         });
 
     });
