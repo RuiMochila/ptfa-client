@@ -1,6 +1,20 @@
+var loginSuccessCallback = function() {
+    alert('Sucesso');
+    // window.localStorage.getItem('accessToken') -> para textbox
+  },
+  loginUnknowErrorCallback = function() {
+    alert('Queres tentar outra vez?');
+  }
 
 $(document).on("ready", function () {
     initPageslider();
+    FacebookInAppBrowser.settings.appId = '1419134511631467';
+    FacebookInAppBrowser.settings.redirectUrl = 'http://localhost';
+    FacebookInAppBrowser.settings.permissions = 'email,user_birthday';
+    $('#fb_button').on('click', function(e) {
+      FacebookInAppBrowser.login(loginSuccessCallback, loginUnknowErrorCallback);
+    });
+
     route();
     $('.hidden_errors').hide();
     $('.hidden-errors').hide();
@@ -565,3 +579,8 @@ function appendNominees(nominees, table_id, cols) {
 
     });
   }
+
+function calcAge(dateString) {
+  var birthday = +new Date(dateString);
+  return ~~((Date.now() - birthday) / (31557600000));
+}

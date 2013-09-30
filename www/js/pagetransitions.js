@@ -16,8 +16,8 @@ function initPageslider() {
 var Modernizr = window.Modernizr, $body = $( 'body' );
 
 var	isAnimating = false,
-	endCurrPage = false,
-	endNextPage = false,
+	// endCurrPage = false,
+	// endNextPage = false,
 	animEndEventNames = {
 		'WebkitAnimation' : 'webkitAnimationEnd',
 		'OAnimation' : 'oAnimationEnd',
@@ -56,7 +56,7 @@ function changePage($next, animation) {
 
 	$current.addClass( outClass ).on( animEndEventName, function() {
 		$current.off( animEndEventName );
-		endCurrPage = true;
+		// endCurrPage = true;
 		// if( endNextPage ) {
 			console.log("endNextPage");
 			onEndAnimation( $current, $next );
@@ -65,7 +65,7 @@ function changePage($next, animation) {
 
 	$next.addClass( inClass ).on( animEndEventName, function() {
 		$next.off( animEndEventName );
-		endNextPage = true;
+		// endNextPage = true;
 		// if( endCurrPage ) {
 			console.log("endCurrPage");
 			onEndAnimation( $current, $next );
