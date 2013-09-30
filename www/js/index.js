@@ -1,5 +1,20 @@
 var loginSuccessCallback = function() {
     alert('Sucesso');
+    // Testa estes campos
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        alert(JSON.stringify(response.authResponse.signedRequest));
+        var uid = response.authResponse.userID;
+        var accessToken = response.authResponse.accessToken;
+      } else if (response.status === 'not_authorized') {
+        alert("Não autoriza a aplicação.");
+      } else {
+        alert("Sucesso Olá");
+      }
+    });
+    $('#input-email').val(response.email);
+    $('#input-name').val(response.name);
+    $('#input-age').val(calcAge(response.birthday));
     // window.localStorage.getItem('accessToken') -> para textbox
   },
   loginUnknowErrorCallback = function() {
@@ -12,7 +27,11 @@ $(document).on("ready", function () {
     FacebookInAppBrowser.settings.redirectUrl = 'http://localhost';
     FacebookInAppBrowser.settings.permissions = 'email,user_birthday';
     $('#fb_button').on('click', function(e) {
-      FacebookInAppBrowser.login(loginSuccessCallback, loginUnknowErrorCallback);
+      if(navigator.onLine){
+        FacebookInAppBrowser.login(loginSuccessCallback, loginUnknowErrorCallback);
+      }else{
+        alert("Precisas de conecção à Internet para efectuar esta operação.");
+      }
     });
 
     route();
@@ -478,6 +497,9 @@ function appendNominees(nominees, table_id, cols) {
   function submitListener() {
 
     $('#votar-button').on('click', function() {
+      if(navigator.onLine){
+      
+      
         $(this).hide();
          // Estes só podem ter value se selected...
          if($('#vote_valoriza_artista').is(":checked")){
@@ -576,7 +598,10 @@ function appendNominees(nominees, table_id, cols) {
             $('#votar-button').show();
           }
         });
-
+      
+      }else{
+        alert("Precisas de conecção à Internet para efectuar esta operação.");
+      }
     });
   }
 
