@@ -9,19 +9,46 @@
     <link rel="stylesheet" type="text/css" href="css/animations.css" />
     <link rel="stylesheet" type="text/css" href="css/ratchet.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/zocias.css" />
     <script src="js/vendor/jquery-1.10.2.js"></script>
     <script src="js/vendor/modernizr.custom.js"></script>
+    <script src="js/phonegap.facebook.inappbrowser.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <title>Portugal Festival Awards</title>
   </head>
+  <script type="text/javascript">
+  // Additional JS functions here
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1419134511631467', // App ID
+      channelUrl : '///channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+    console.log("FB INIT");
+    // Additional init code here
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+
+
+
+  </script>
   <body  style='-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;' 
       unselectable='on'
       onselectstart='return false;'> 
       <!-- onmousedown='return false;' retirei para consegur carregar nas textbox -->
   <div id="pages-main" class="pages-perspective">
-      
 
-      <div id="main" class="page page-init">
+      <div id="main" class="page">
         <header class="bar-title">
         <h1 class="title">Portugal Festival Awards</h1>
         </header>
@@ -74,6 +101,7 @@
                 <a id="wc">
                   Melhores WC's
                   <span class="chevron"></span>
+                  <!-- <span class="count-positive">✓</span> -->
                 </a>
               </li>
               <li>
@@ -82,83 +110,94 @@
                   <span class="chevron"></span>
                 </a>
               </li>
-              
               <li>
-                <a id="me">
-                  Sobre mim
+                <a id="opiniao">
+                  Opinião
                   <span class="chevron"></span>
                 </a>
               </li>
             </ul>
-            <a class="button button-block">Votar!</a>
+            
+            <!-- Faço o form aqui com hidden fields e altero os valores com jquery -->
+            <!-- Depois submeto via ajax -->
+            <!-- Pessoal -->
+            <input type="hidden" id="input-name" name="vote[name]">
+            <input type="hidden" id="input-email" name="vote[email]">
+            <input type="hidden" id="input-age" name="vote[age]">
+            <input type="hidden" id="input-contact" name="vote[contact]">
+            <input type="hidden" id="input-place" name="vote[place]">
+            <input type="hidden" id="input-sex" name="vote[sex]">
+            
+            <input type="hidden" id="input-artista" name="vote[valoriza_artista]">
+            <input type="hidden" id="input-localizacao" name="vote[valoriza_localizacao]">
+            <input type="hidden" id="input-convivio" name="vote[valoriza_convivio]">
+            <input type="hidden" id="input-campismo" name="vote[valoriza_campismo]">
+            <input type="hidden" id="input-higiene" name="vote[valoriza_higiene]"> 
+            <input type="hidden" id="input-preco" name="vote[valoriza_preco]"> 
+            <input type="hidden" id="input-restauracao" name="vote[valoriza_restauracao]">
+            <input type="hidden" id="input-brindes" name="vote[valoriza_brindes]"> 
+            <input type="hidden" id="input-data" name="vote[valoriza_data]"> 
+            <input type="hidden" id="input-meteorologia" name="vote[valoriza_meteorologia]"> 
+            <input type="hidden" id="input-acessibilidades" name="vote[valoriza_acessibilidades]">
+            <input type="hidden" id="input-sustentabilidade" name="vote[valoriza_sustentabilidade]">
+
+            <input type="hidden" id="input-artista-ver" name="vote[artista_ver]">
+            <!-- Categorias -->
+            <input type="hidden" id="input-grande" name="vote[grande]">
+            <input type="hidden" id="input-media" name="vote[media]">
+            <input type="hidden" id="input-pequena" name="vote[pequena]">
+            <input type="hidden" id="input-urbano" name="vote[urbano]">
+            <input type="hidden" id="input-naoUrbano" name="vote[naoUrbano]">
+            <input type="hidden" id="input-revelacao" name="vote[revelacao]">
+            <input type="hidden" id="input-cabeca" name="vote[cabeca]">
+            <input type="hidden" id="input-wc" name="vote[wc]">
+            <input type="hidden" id="input-campismo" name="vote[campismo]">
+
+            <div class="errors hidden-errors">
+              <label>Falta responder a:</label><br>
+              <label class="hidden_error" id="error_grande">Melhor Festival de Grande Dimensão <br></label>
+              <label class="hidden_error" id="error_media">Melhor Festival de Média Dimensão <br></label>
+              <label class="hidden_error" id="error_pequena">Melhor Festival de Pequena Dimensão <br></label>
+              <label class="hidden_error" id="error_urbano">Melhor Festival Urbano <br></label>
+              <label class="hidden_error" id="error_naoUrbano">Melhor Festival não Urbano <br></label>
+              <label class="hidden_error" id="error_revelacao">Artista Revelação <br></label>
+              <label class="hidden_error" id="error_cabeca">Melhor Cabeça de Cartaz <br></label>
+              <label class="hidden_error" id="error_wc">Melhores WC's <br></label>
+              <label class="hidden_error" id="error_campismo">Melhor Campismo <br></label>
+            </div>
+
+            <a id="votar-button" class="button button-block">Votar!</a>
+            
           </div>
       </div>
 
-      <div id="urbanoView" class="page">
+      <div id="grandeView" class="page">
         <header class="bar-title">
         <a class="button back">Back</a>
-              <h1 class="title">Urbano</h1>
+              <h1 class="title">Grande Dimensão</h1>
             </header>
             <div class="content">
-
-              <ul class="list">
-                  <li>
-                    <a href="#" id="urbano_button">
-                      Go Somewhere
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Go Somewhere
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Go Somewhere
-                      <span class="chevron"></span>
-                    </a>
-                  </li>
-              </ul>
-              <a id="doneUrbano" onclick='changePage($("#naoUrbanoView"),"right");' class="button button-block">Continuar</a>
-        </div>
+                <table id="grandeTable" class="festivals">
+                  <tbody>
+                  </tbody>
+                </table>
+                
+                <a id="doneGrande" class="button button-block">Continuar</a>
+            </div>        
       </div>
-      
+
       <div id="mediaView" class="page">
         <header class="bar-title">
         <a class="button back">Back</a>
         <h1 class="title">Média Dimensão</h1>
         </header>
         <div class="content">
-          <div class="festivals" >
-          <table style="padding:10px; margin:0 auto; max-width:100%;">
-            <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            </tr>
-            
-            <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            </tr>
-            
-            <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            </tr>
-            
-            <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            </tr>
-            
-            <tr>
-            <td><img class="img-responsive" style="padding:10px;" src="img/festival.png"></td>
-            </tr>
+          <table id="mediaTable" class="festivals">
+            <tbody>
+            </tbody>
           </table>
-          </div>
-          <a id="doneMedia" onclick='changePage($("#pequenaView"),"right");' class="button button-block">Continuar</a>
+
+          <a id="doneMedia" class="button button-block">Continuar</a>
         </div>
       </div>
 
@@ -168,20 +207,58 @@
               <h1 class="title">Pequena Dimensão</h1>
             </header>
             <div class="content">
-                Some Content
-                <a id="donePequena" onclick='changePage($("#urbanoView"),"right");' class="button button-block">Continuar</a>
+                <table id="pequenaTable" class="festivals">
+                  <tbody>
+                  </tbody>
+                </table>
+                
+                <a id="donePequena" class="button button-block">Continuar</a>
             </div>        
+      </div>
+
+      <div id="urbanoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+        <h1 class="title">Urbano</h1>
+        </header>
+        <div class="content">
+
+          <table id="urbanoTable" class="festivals">
+            <tbody>
+            </tbody>
+          </table>
+          
+          <a id="doneUrbano" class="button button-block">Continuar</a>
+        </div>
+      </div>
+      
+      <div id="naoUrbanoView" class="page">
+        <header class="bar-title">
+          <a class="button back">Back</a>
+          <h1 class="title">Não Urbano</h1>
+        </header>
+        <div class="content">
+          <table id="naoUrbanoTable" class="festivals">
+            <tbody>
+            </tbody>
+          </table>
+          <a id="doneNaoUrbano" class="button button-block">Continuar</a>
+        </div>        
       </div>
 
       <div id="revelacaoView" class="page">
         <header class="bar-title">
         <a class="button back">Back</a>
-              <h1 class="title">Artista Revelação</h1>
-            </header>
-            <div class="content">
-                Some Content
-                <a id="doneRevelacao" onclick='changePage($("#cabecaView"),"right");' class="button button-block">Continuar</a>
-            </div>        
+        <h1 class="title">Artista Revelação</h1>
+        </header>
+          <div class="content">
+            <table id="revelacaoTable" class="festivals">
+              <tbody>
+              </tbody>
+            </table>
+            
+            <a id="doneRevelacao" class="button button-block">Continuar</a>
+          </div>        
       </div>
 
       <div id="cabecaView" class="page">
@@ -190,30 +267,12 @@
               <h1 class="title">Cabeça Cartaz</h1>
             </header>
             <div class="content">
-                Some Content
-                <a id="doneCabeca" onclick='changePage($("#wcView"),"right");' class="button button-block">Continuar</a>
-            </div>        
-      </div>
-
-      <div id="grandeView" class="page">
-        <header class="bar-title">
-        <a class="button back">Back</a>
-              <h1 class="title">Grande Dimensão</h1>
-            </header>
-            <div class="content">
-                Some Content
-                <a id="doneGrande" onclick='changePage($("#mediaView"),"right");' class="button button-block">Continuar</a>
-            </div>        
-      </div>
-
-      <div id="campismoView" class="page">
-        <header class="bar-title">
-        <a class="button back">Back</a>
-              <h1 class="title">Melhor Campismo</h1>
-            </header>
-            <div class="content">
-                Some Content
-                <a id="doneCampismo" class="button button-block back">Continuar</a>
+            <table id="cabecaTable" class="festivals">
+              <tbody>
+              </tbody>
+            </table>
+                
+                <a id="doneCabeca" class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -223,75 +282,27 @@
               <h1 class="title">Melhores WC's</h1>
             </header>
             <div class="content">
-                Some Content
-                <a id="doneWC" onclick='changePage($("#campismoView"),"right");' class="button button-block back">Continuar</a>
-            </div>        
-      </div>
-
-      <div id="naoUrbanoView" class="page">
-        <header class="bar-title">
-        <a class="button back">Back</a>
-              <h1 class="title">Não Urbano</h1>
-            </header>
-            <div class="content">
-                Some Content
-                <a id="doneNaoUrbano" onclick='changePage($("#revelacaoView"),"right");' class="button button-block back">Continuar</a>
-            </div>        
-      </div>
-
-      <div id="meView" class="page">
-        <header class="bar-title">
-        <a class="button back">Back</a>
-              <h1 class="title">Some Mim</h1>
-            </header>
-            <div class="content">
-              <form>
-            <div class="input-group">
-              <div class="input-row">
-                <label for="vote_place">Nome</label>
-                <input id="vote_place" name="vote[place]" type="text">
-              </div>
-              <div class="input-row">
-                <label for="vote_age">Idade</label>
-                <input id="vote_age" name="vote[age]" type="number">
-              </div>
-              <div class="input-row">
-                <label for="email">Email</label>
-                <input type="email" placeholder="ratchetframework@gmail.com">
-              </div>
-              <div class="input-row">
-                <label for="vote_sex">Sexo</label>
-              <select id="vote_sex" name="vote[sex]">
-                <option value="Masculino" selected="selected">Masculino</option>
-                <option value="Feminino">Feminino</option>
-              </select>
-              </div>
-            </div>
-
-            
-            <label for="vote_valoriza_festival">O que é que valorizas mais num festival de música?</label>
-            
-            
-            <select id="vote_valoriza_festival" name="vote[valoriza_festival]">
-              <option value="1">Os artistas/estilo musical</option>
-              <option value="2">A localização</option>
-              <option value="3">O convívio entre pessoas</option>
-              <option value="4">O campismo</option>
-              <option value="5">A higiene</option>
-              <option value="6">O preço</option>
-              <option value="7">A restauração</option>
-              <option value="8">Os brindes</option>
-              <option value="9">A data</option>
-              <option value="10">A meteorologia</option>
-              <option value="11">As acessibilidades</option>
-              <option value="12">A preocupação com a sustentabilidade</option>
-            </select>
+               <table id="wcTable" class="festivals">
+                  <tbody>
+                  </tbody>
+                </table>
           
-          <label for="vote_artista_ver">Que artista(s) gostavas de ver actuar num festival português no próximo ano?</label>
-            <input id="vote_artista_ver" name="vote[artista_ver]" size="30" type="text">
+                <a id="doneWC" class="button button-block">Continuar</a>
+            </div>        
+      </div>
 
-          </form>
-                <a id="doneMe" class="button button-block back">Continuar</a>
+      <div id="campismoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+              <h1 class="title">Melhor Campismo</h1>
+            </header>
+            <div class="content">
+              <table id="campismoTable" class="festivals">
+                <tbody>
+                </tbody>
+              </table>
+          
+                <a id="doneCampismo" class="button button-block">Continuar</a>
             </div>        
       </div>
 
@@ -300,15 +311,253 @@
               <h1 class="title">Obrigado</h1>
             </header>
             <div class="content">
-                Obrigado pela tua participação!
+                <div style="text-align:center;">
+                  <h4>Os teus votos foram registados. Obrigado! </h4>
+                  <h5>Visita o nosso facebook para mais novidades!</h5>
+            </div>
+      </div>
+
+
+      <div id="me" class="page page-init">
+        <header class="bar-title">
+        <h1 class="title">Portugal Festival Awards Me</h1>
+        </header>
+
+          <div class="content">
+            <div style="text-align:center;">
+              <h2>Inscrição Pessoal</h2>
+            </div>
+            <!-- <form> -->
+            <div class="input-group">
+              <div class="input-row">
+                <label for="vote_name">Nome*</label>
+                <input id="vote_name" name="vote[name]" type="text">
+              </div>
+              <div class="input-row">
+                <label for="vote_age">Idade*</label>
+                <input id="vote_age" name="vote[age]" type="number">
+              </div>
+              <div class="input-row">
+                <label for="email">Email*</label>
+                <input id="vote_email" type="email" name="vote[email]">
+              </div>
+              <div class="input-row">
+                <label for="vote_sex">Sexo*</label>
+                <select id="vote_sex" name="vote[sex]">
+                  <option value="Masculino" selected="selected">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                </select>
+              </div>
+              <div class="input-row">
+                <label for="vote_contact">Telemóvel</label>
+                <input type="text" id="vote_contact" name="vote[contact]">
+              </div>
+              <div class="input-row">
+                <label for="vote_place">Localidade</label>
+                <input type="text" id="vote_place" name="vote[place]">
+              </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+              Ou <br>
+              <button id="fb_button" class="zocial facebook">Registo Facebook</button>
+            </div>
+          <!-- </form> -->
+                
+          <div class="errors hidden-errors">
+            <label>Falta responder a:</label><br>
+            <label class="hidden_error" id="error_email">O email que introduziste não está correcto!<br></label>
+            <label class="hidden_error" id="error_name">Ainda não introduziste o teu nome!<br></label>
+            <label class="hidden_error" id="error_age">Ainda não introduziste a tua idade!<br></label>
+            <label class="hidden_error" id="error_sex">Ainda não introduziste o teu sexo!<br></label>
+          </div>
+          <div style="color: red;">
+            campos obrigatórios*
+          </div>
+          <a id="doneMe" class="button button-block">Continuar</a>
+         
+        </div>
+      
+      </div>
+
+      <div id="opiniaoView" class="page">
+        <header class="bar-title">
+        <a class="button back">Back</a>
+          <h1 class="title">Portugal Festival Awards</h1>
+        </header>
+            <div class="content">
+              
+            <label for="vote_valoriza_festival"><h4>O que é que valorizas mais num festival de música?</h4></label>
+            <table>
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_artista" value="1" name="vote[valoriza_artista]" />
+                      <label for="vote_valoriza_artista"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>Os artistas/estilo musical</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_localizacao" value="1" name="vote[valoriza_localizacao]" />
+                      <label for="vote_valoriza_localizacao"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A localização</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_convivio" name="vote[valoriza_convivio]" value="1">
+                      <label for="vote_valoriza_convivio"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>O convívio entre pessoas</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_campismo" name="vote[valoriza_campismo]" value="1">
+                      <label for="vote_valoriza_campismo"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>O campismo</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_higiene" name="vote[valoriza_higiene]" value="1">
+                      <label for="vote_valoriza_higiene"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A higiene</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_preco" name="vote[valoriza_preco]" value="1">
+                      <label for="vote_valoriza_preco"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>O preço</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_restauracao" name="vote[valoriza_restauracao]" value="1">
+                      <label for="vote_valoriza_restauracao"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A restauração</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_brindes" name="vote[valoriza_brindes]" value="1">
+                      <label for="vote_valoriza_brindes"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>Os brindes</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_data" name="vote[valoriza_data]" value="1">
+                      <label for="vote_valoriza_data"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A data</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_meteorologia" name="vote[valoriza_meteorologia]" value="1">
+                      <label for="vote_valoriza_meteorologia"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A meteorologia</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_accessibilidades" name="vote[valoriza_acessibilidades]" value="1">
+                      <label for="vote_valoriza_accessibilidades"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>As acessibilidades</h5></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <section>
+                    <div class="checkboxFour">
+                      <input type="checkbox" id="vote_valoriza_sustentabilidade" name="vote[valoriza_sustentabilidade]" value="1"> 
+                      <label for="vote_valoriza_sustentabilidade"></label>
+                    </div>
+                  </section>
+                </td>
+                <td><h5>A preocupação com a sustentabilidade</h5></td>
+              </tr>
+
+            </table>
+
+            
+          <label for="vote_artista_ver"><h4>Que artista(s) gostavas de ver actuar num festival português no próximo ano?</h4></label>
+            <input id="vote_artista_ver" name="vote[artista_ver]" type="text">
+
+          
+              <a id="doneOpiniao" class="button button-block back">Continuar!</a>
             </div>        
       </div>
 
     </div>
 
     <script src="js/pagetransitions.js"></script>
-    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/nominees/grande.js"></script>
+    <script type="text/javascript" src="js/nominees/media.js"></script>
+    <script type="text/javascript" src="js/nominees/pequena.js"></script>
+    <script type="text/javascript" src="js/nominees/urbano.js"></script>
+    <script type="text/javascript" src="js/nominees/naoUrbano.js"></script>
+    <script type="text/javascript" src="js/nominees/cabeca.js"></script>
+    <script type="text/javascript" src="js/nominees/revelacao.js"></script>
+    <script type="text/javascript" src="js/nominees/wc.js"></script>
+    <script type="text/javascript" src="js/nominees/campismo.js"></script>
 
+    <script src="js/index.js"></script>
 
 
   </body>

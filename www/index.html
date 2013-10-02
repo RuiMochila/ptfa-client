@@ -16,7 +16,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <title>Portugal Festival Awards</title>
   </head>
-    <script type="text/javascript">
+  <script type="text/javascript">
   // Additional JS functions here
   window.fbAsyncInit = function() {
     FB.init({
@@ -26,9 +26,8 @@
       cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true  // parse XFBML
     });
-
+    console.log("FB INIT");
     // Additional init code here
-
   };
 
   // Load the SDK asynchronously
@@ -312,7 +311,9 @@
               <h1 class="title">Obrigado</h1>
             </header>
             <div class="content">
-                Obrigado pela tua participação!
+                <div style="text-align:center;">
+                  <h4>Os teus votos foram registados. Obrigado! </h4>
+                  <h5>Visita o nosso facebook para mais novidades!</h5>
             </div>
       </div>
 

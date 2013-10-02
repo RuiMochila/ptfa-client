@@ -544,7 +544,7 @@ function appendNominees(nominees, table_id, cols) {
         $("#input-artista-ver").val($("#vote_artista_ver").val()); 
 
 
-      var url = "http://localhost:3000/votes";
+      var url = "http://teste.portugalfestivalawards.pt/votes";
         $.ajax({
           type: "POST",
           url: url,

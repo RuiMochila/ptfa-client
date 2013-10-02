@@ -16,8 +16,8 @@ function initPageslider() {
 var Modernizr = window.Modernizr, $body = $( 'body' );
 
 var	isAnimating = false,
-	endCurrPage = false,
-	endNextPage = false,
+	// endCurrPage = false,
+	// endNextPage = false,
 	animEndEventNames = {
 		'WebkitAnimation' : 'webkitAnimationEnd',
 		'OAnimation' : 'oAnimationEnd',
@@ -33,6 +33,7 @@ var	isAnimating = false,
 function changePage($next, animation) {
 	$current = $('.page-current');
 
+	
 	if( isAnimating ) {
 		return false;
 	}
@@ -55,18 +56,20 @@ function changePage($next, animation) {
 
 	$current.addClass( outClass ).on( animEndEventName, function() {
 		$current.off( animEndEventName );
-		endCurrPage = true;
-		if( endNextPage ) {
+		// endCurrPage = true;
+		// if( endNextPage ) {
+			// console.log("endNextPage");
 			onEndAnimation( $current, $next );
-		}
+		// }
 	} );
 
 	$next.addClass( inClass ).on( animEndEventName, function() {
 		$next.off( animEndEventName );
-		endNextPage = true;
-		if( endCurrPage ) {
+		// endNextPage = true;
+		// if( endCurrPage ) {
+			// console.log("endCurrPage");
 			onEndAnimation( $current, $next );
-		}
+		// }
 	} );
 
 	if( !support ) {
@@ -76,6 +79,7 @@ function changePage($next, animation) {
 }
 
 function onEndAnimation( $outpage, $inpage ) {
+	// console.log("end animation");
 	endCurrPage = false;
 	endNextPage = false;
 	resetPage( $outpage, $inpage );
@@ -83,6 +87,7 @@ function onEndAnimation( $outpage, $inpage ) {
 }
 
 function resetPage( $outpage, $inpage ) {
+	// console.log("reset page");
 	$outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
 	$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' page-current' );
 }

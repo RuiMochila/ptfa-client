@@ -58,7 +58,7 @@ function changePage($next, animation) {
 		$current.off( animEndEventName );
 		// endCurrPage = true;
 		// if( endNextPage ) {
-			console.log("endNextPage");
+			// console.log("endNextPage");
 			onEndAnimation( $current, $next );
 		// }
 	} );
@@ -67,7 +67,7 @@ function changePage($next, animation) {
 		$next.off( animEndEventName );
 		// endNextPage = true;
 		// if( endCurrPage ) {
-			console.log("endCurrPage");
+			// console.log("endCurrPage");
 			onEndAnimation( $current, $next );
 		// }
 	} );
@@ -79,7 +79,7 @@ function changePage($next, animation) {
 }
 
 function onEndAnimation( $outpage, $inpage ) {
-	console.log("end animation");
+	// console.log("end animation");
 	endCurrPage = false;
 	endNextPage = false;
 	resetPage( $outpage, $inpage );
@@ -87,7 +87,7 @@ function onEndAnimation( $outpage, $inpage ) {
 }
 
 function resetPage( $outpage, $inpage ) {
-	console.log("reset page");
+	// console.log("reset page");
 	$outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
 	$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' page-current' );
 }
